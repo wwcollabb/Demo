@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Payment - Worldwide Collab</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #ec4899;
+      --dark: #0f172a;
+      --darker: #020617;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--darker);
+      color: var(--light);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+    }
+
+    .payment-container {
+      width: 100%;
+      max-width: 500px;
+      animation: slideIn 0.5s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .payment-card {
+      background: rgba(30, 41, 59, 0.9);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: var(--gray);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s;
+      font-size: 14px;
+    }
+
+    .back-btn:hover {
+      color: var(--light);
+    }
+
+    .payment-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .payment-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 40px;
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+    }
+
+    .payment-title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .payment-subtitle {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .order-details {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .detail-row:last-child {
+      margin-bottom: 0;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .detail-label {
+      color: var(--gray);
+    }
+
+    .upi-section {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .upi-box {
+      background: rgba(99, 102, 241, 0.2);
+      border: 2px dashed var(--primary);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .upi-label {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .upi-id {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: monospace;
+      letter-spacing: 2px;
+      color: var(--primary);
+      user-select: all;
+      cursor: pointer;
+    }
+
+    .upi-id:hover {
+      text-decoration: underline;
+    }
+
+    .qr-code {
+      width: 200px;
+      height: 200px;
+      background: white;
+      border-radius: 16px;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      font-weight: 600;
+      overflow: hidden;
+    }
+
+    .qr-code img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .timer-box {
+      background: rgba(239, 68, 68, 0.1);
+      border: 2px solid var(--danger);
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .timer-label {
+      font-size: 13px;
+      color: var(--danger);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .timer-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--danger);
+      font-family: monospace;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      color: var(--light);
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-pay {
+      width: 100%;
+      padding: 18px;
+      background: var(--gradient-1);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-pay:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(99, 102, 241, 0.6);
+    }
+
+    .security-badges {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+      font-size: 13px;
+      color: var(--gray);
+      flex-wrap: wrap;
+    }
+
+    .security-badges i {
+      margin-right: 5px;
+      color: var(--success);
+    }
+
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--success);
+      color: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transform: translateX(400px);
+      transition: transform 0.3s;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateX(0);
+    }
+
+    @media (max-width: 480px) {
+      .payment-card {
+        padding: 25px;
+      }
+      
+      .upi-id {
+        font-size: 1.2rem;
+      }
+      
+      .payment-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-animation"></div>
+  
+  <a href="index.html#services" class="back-btn">
+    <i class="fas fa-arrow-left"></i> Back to Store
+  </a>
+
+  <div class="payment-container">
+    <div class="payment-card">
+      <div class="payment-header">
+        <div class="payment-icon">
+          <i class="fas fa-lock"></i>
+        </div>
+        <h1 class="payment-title">Complete Payment</h1>
+        <p class="payment-subtitle">Secure UPI Payment Gateway</p>
+      </div>
+
+      <div class="order-details">
+        <div class="detail-row">
+          <span class="detail-label">Order ID</span>
+          <span id="displayOrderId" style="font-family: monospace; color: var(--primary);">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Platform</span>
+          <span id="displayPlatform">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Service</span>
+          <span id="displayService">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Quantity</span>
+          <span id="displayQuantity">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Total Amount</span>
+          <span style="color: var(--success);">₹<span id="displayAmount">0.00</span></span>
+        </div>
+      </div>
+
+      <div class="upi-section">
+        <div class="upi-box">
+          <div class="upi-label">Pay via UPI</div>
+          <div class="upi-id" onclick="copyUpi()">nextune@upi</div>
+          <small style="color: var(--gray); display: block; margin-top: 8px;">Click to copy</small>
+        </div>
+
+        <div class="qr-code">
+          <img src="qrcode.png" alt="UPI QR Code" onerror="this.style.display='none'; this.parentElement.innerHTML='QR Code'">
+        </div>
+
+        <div class="timer-box">
+          <div class="timer-label">Payment Window Closes In</div>
+          <div class="timer-value" id="countdown">05:00</div>
+        </div>
+      </div>
+
+      <form onsubmit="submitPayment(event)">
+        <div class="form-group">
+          <label class="form-label">UPI Transaction ID *</label>
+          <input type="text" class="form-control" id="transactionId" placeholder="e.g. 1234567890" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Your Email *</label>
+          <input type="email" class="form-control" id="customerEmail" placeholder="your@email.com" required>
+        </div>
+
+        <button type="submit" class="btn-pay">
+          <i class="fas fa-check-circle"></i>
+          Confirm Payment
+        </button>
+      </form>
+
+      <div class="security-badges">
+        <span><i class="fas fa-shield-alt"></i> SSL Secured</span>
+        <span><i class="fas fa-clock"></i> 24/7 Support</span>
+        <span><i class="fas fa-undo"></i> Refund Guaranteed</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i> Payment confirmed! Redirecting...
+  </div>
+
+  <script>
+    let orderData = null;
+    let timeLeft = 300; // 5 minutes
+    let timerInterval;
+
+    window.onload = function() {
+      // Retrieve order data
+      const stored = sessionStorage.getItem('wwc_order');
+      if (!stored) {
+        alert('No order found! Redirecting to store...');
+        window.location.href = 'index.html#services';
+        return;
+      }
+      
+      orderData = JSON.parse(stored);
+      
+      // Display order details
+      document.getElementById('displayOrderId').textContent = orderData.id;
+      document.getElementById('displayPlatform').textContent = orderData.platform;
+      document.getElementById('displayService').textContent = orderData.service;
+      document.getElementById('displayQuantity').textContent = orderData.quantity;
+      document.getElementById('displayAmount').textContent = orderData.amount;
+      
+      // Start countdown
+      startTimer();
+    };
+
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        document.getElementById('countdown').textContent = 
+          `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          alert('Payment window expired! Please place your order again.');
+          window.location.href = 'index.html#services';
+        }
+        timeLeft--;
+      }, 1000);
+    }
+
+    function copyUpi() {
+      navigator.clipboard.writeText('nextune@upi');
+      showToast('UPI ID copied to clipboard!');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    function submitPayment(e) {
+      e.preventDefault();
+      
+      const transactionId = document.getElementById('transactionId').value;
+      const customerEmail = document.getElementById('customerEmail').value;
+      
+      if (!transactionId || !customerEmail) {
+        alert('Please fill all required fields!');
+        return;
+      }
+      
+      // Prepare data for email
+      const paymentData = {
+        orderId: orderData.id,
+        platform: orderData.platform,
+        service: orderData.service,
+        link: orderData.link,
+        quantity: orderData.quantity,
+        amount: orderData.amount,
+        transactionId: transactionId,
+        customerEmail: customerEmail,
+        timestamp: new Date().toLocaleString(),
+        status: 'Payment Completed - Pending Verification'
+      };
+      
+      // Send email via FormSubmit
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://formsubmit.co/ajax/team.wwc@hotmail.com';
+      
+      Object.keys(paymentData).forEach(key => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = paymentData[key];
+        form.appendChild(input);
+      });
+      
+      const subject = document.createElement('input');
+      subject.type = 'hidden';
+      subject.name = '_subject';
+      subject.value = `New Order Payment - ${orderData.id}`;
+      form.appendChild(subject);
+      
+      const replyTo = document.createElement('input');
+      replyTo.type = 'hidden';
+      replyTo.name = '_replyto';
+      replyTo.value = customerEmail;
+      form.appendChild(replyTo);
+      
+      document.body.appendChild(form);
+      form.submit();
+      
+      // Show success and redirect
+      showToast('Payment confirmed! Redirecting to home...');
+      
+      // Clear session storage
+      sessionStorage.removeItem('wwc_order');
+      
+      // Redirect to home after 3 seconds
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 3000);
+    }
+
+    // Cleanup on page unload
+    window.onbeforeunload = function() {
+      clearInterval(timerInterval);
+    };
+  </script>
+</body>
+</html>
+
