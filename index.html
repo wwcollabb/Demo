@@ -1,0 +1,3903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Worldwide Collab - Premium SMM Services for Instagram, YouTube, TikTok and more">
+  <meta name="theme-color" content="#6366f1">
+  <title>Worldwide Collab - Premium SMM Services</title>
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== CSS RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    :root {
+      /* Colors */
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --primary-light: #818cf8;
+      --secondary: #ec4899;
+      --accent: #8b5cf6;
+      --dark: #0f172a;
+      --dark-light: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --gray-light: #94a3b8;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --info: #0ea5e9;
+      
+      /* Gradients */
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+      
+      /* Border Radius */
+      --radius-sm: 8px;
+      --radius: 12px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-full: 9999px;
+      
+      /* Transitions */
+      --transition-fast: 150ms ease;
+      --transition: 300ms ease;
+      --transition-slow: 500ms ease;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f1f5f9;
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* ===== UTILITY CLASSES ===== */
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 32px;
+      }
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .flex-col {
+      flex-direction: column;
+    }
+    
+    .items-center {
+      align-items: center;
+    }
+    
+    .justify-center {
+      justify-content: center;
+    }
+    
+    .justify-between {
+      justify-content: space-between;
+    }
+    
+    .gap-2 {
+      gap: 8px;
+    }
+    
+    .gap-4 {
+      gap: 16px;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    .hidden {
+      display: none !important;
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="#" class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <div class="logo-icon">
+            <i class="fas fa-globe" aria-hidden="true"></i>
+          </div>
+          <span class="logo-text">Worldwide Collab</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#creators" class="nav-link">Creators</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE NAVIGATION OVERLAY ===== -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav-content">
+      <a href="#services" class="mobile-nav-link" onclick="closeMenu()">
+        <i class="fas fa-shopping-cart"></i>
+        <span>SMM Services</span>
+      </a>
+      <a href="#features" class="mobile-nav-link" onclick="closeMenu()">
+        <i class="fas fa-star"></i>
+        <span>Features</span>
+      </a>
+      <a href="#creators" class="mobile-nav-link" onclick="closeMenu()">
+        <i class="fas fa-users"></i>
+        <span>Top Creators</span>
+      </a>
+      <a href="#about" class="mobile-nav-link" onclick="closeMenu()">
+        <i class="fas fa-info-circle"></i>
+        <span>About Us</span>
+      </a>
+      <a href="#contact" class="mobile-nav-link" onclick="closeMenu()">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+      <a href="#faq" class="mobile-nav-link" onclick="closeMenu()">
+        <i class="fas fa-question-circle"></i>
+        <span>FAQ</span>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    /* ===== HEADER STYLES ===== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: box-shadow var(--transition);
+    }
+    
+    .site-header.scrolled {
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--dark);
+    }
+    
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gradient-1);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+    
+    .logo-text {
+      font-size: 20px;
+      font-weight: 800;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    @media (max-width: 380px) {
+      .logo-text {
+        font-size: 16px;
+      }
+    }
+    
+    /* Desktop Navigation */
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    @media (min-width: 1024px) {
+      .desktop-nav {
+        display: flex;
+      }
+    }
+    
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: var(--radius);
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      color: var(--primary);
+      background: rgba(99, 102, 241, 0.08);
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: width var(--transition);
+    }
+    
+    .nav-link:hover::after {
+      width: 24px;
+    }
+    
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 48px;
+      height: 48px;
+      background: #f1f5f9;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      position: relative;
+      z-index: 1001;
+    }
+    
+    @media (min-width: 1024px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+    
+    .mobile-menu-btn:active {
+      transform: scale(0.95);
+      background: #e2e8f0;
+    }
+    
+    .menu-line {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: all var(--transition);
+      transform-origin: center;
+    }
+    
+    .mobile-menu-btn.active .menu-line:nth-child(1) {
+      transform: translateY(8.5px) rotate(45deg);
+    }
+    
+    .mobile-menu-btn.active .menu-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    
+    .mobile-menu-btn.active .menu-line:nth-child(3) {
+      transform: translateY(-8.5px) rotate(-45deg);
+    }
+    
+    /* Mobile Navigation Overlay */
+    .mobile-nav {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition);
+      padding: 80px 24px 24px;
+    }
+    
+    .mobile-nav.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .mobile-nav-content {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: #f8fafc;
+      border-radius: var(--radius-md);
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+      border: 2px solid transparent;
+    }
+    
+    .mobile-nav-link:active {
+      transform: scale(0.98);
+      background: var(--primary);
+      color: white;
+    }
+    
+    .mobile-nav-link i {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(99, 102, 241, 0.1);
+      border-radius: var(--radius);
+      color: var(--primary);
+      font-size: 16px;
+      transition: all var(--transition-fast);
+    }
+    
+    .mobile-nav-link:active i {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+      </style>
+        <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Boost Your Social Presence <span class="gradient-text">Globally</span>
+          </h1>
+          <p class="hero-description">
+            Connect with millions through our premium SMM services. Real engagement, instant delivery, and 24/7 support for all major platforms.
+          </p>
+          
+          <!-- Platform Icons -->
+          <div class="platform-scroll">
+            <div class="platform-icons">
+              <div class="platform-icon ig" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div class="platform-icon yt" title="YouTube">
+                <i class="fab fa-youtube"></i>
+              </div>
+              <div class="platform-icon tk" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+              </div>
+              <div class="platform-icon tg" title="Telegram">
+                <i class="fab fa-telegram"></i>
+              </div>
+              <div class="platform-icon tw" title="Twitter">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="platform-icon fb" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </div>
+            </div>
+          </div>
+          
+          <!-- CTA Buttons -->
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary btn-lg">
+              <i class="fas fa-rocket"></i>
+              <span>Get Started</span>
+            </a>
+            <a href="#features" class="btn btn-outline btn-lg">
+              <i class="fas fa-play-circle"></i>
+              <span>Learn More</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Hero Stats -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-number" data-count="50000">50K+</div>
+            <div class="stat-label">Orders Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--success);">
+              <i class="fas fa-percentage"></i>
+            </div>
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Success Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);">
+              <i class="fas fa-headset"></i>
+            </div>
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Live Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Background Elements -->
+    <div class="hero-bg">
+      <div class="bg-blob blob-1"></div>
+      <div class="bg-blob blob-2"></div>
+    </div>
+  </section>
+
+  <style>
+    /* ===== HERO STYLES ===== */
+    .hero {
+      position: relative;
+      padding: 120px 0 80px;
+      background: var(--dark);
+      color: white;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+      .hero {
+        padding: 140px 0 100px;
+      }
+    }
+    
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 48px;
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 64px;
+      }
+    }
+    
+    /* Hero Content */
+    .hero-title {
+      font-size: clamp(32px, 8vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-description {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--gray-light);
+      margin-bottom: 32px;
+      max-width: 540px;
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-description {
+        font-size: 20px;
+      }
+    }
+    
+    /* Platform Icons */
+    .platform-scroll {
+      margin-bottom: 32px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    
+    .platform-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .platform-icons {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 8px;
+    }
+    
+    .platform-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: white;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .platform-icon::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    
+    .platform-icon:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    }
+    
+    .platform-icon:hover::before {
+      opacity: 1;
+    }
+    
+    .platform-icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+    .platform-icon.yt { background: #ff0000; }
+    .platform-icon.tk { background: #000000; border: 1px solid #333; }
+    .platform-icon.tg { background: #0088cc; }
+    .platform-icon.tw { background: #000000; }
+    .platform-icon.fb { background: #1877f2; }
+    
+    /* Hero Actions */
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: all var(--transition-fast);
+      border: none;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    
+    .btn:active {
+      transform: scale(0.97);
+    }
+    
+    .btn-lg {
+      padding: 18px 32px;
+      font-size: 17px;
+      border-radius: var(--radius-md);
+    }
+    
+    .btn-primary {
+      background: var(--gradient-1);
+      color: white;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+    }
+    
+    .btn-primary:hover {
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Hero Stats */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    
+    @media (min-width: 640px) {
+      .hero-stats {
+        gap: 24px;
+      }
+    }
+    
+    .stat-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 24px 16px;
+      text-align: center;
+      transition: all var(--transition);
+    }
+    
+    .stat-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-4px);
+    }
+    
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--primary-light);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin: 0 auto 16px;
+    }
+    
+    .stat-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 4px;
+    }
+    
+    @media (min-width: 640px) {
+      .stat-number {
+        font-size: 32px;
+      }
+    }
+    
+    .stat-label {
+      font-size: 13px;
+      color: var(--gray-light);
+    }
+    
+    /* Background Elements */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    
+    .bg-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+    }
+    
+    .blob-1 {
+      width: 600px;
+      height: 600px;
+      background: var(--primary);
+      top: -20%;
+      right: -10%;
+      animation: float 20s infinite ease-in-out;
+    }
+    
+    .blob-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--secondary);
+      bottom: -10%;
+      left: -5%;
+      animation: float 15s infinite ease-in-out reverse;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+  </style>
+    <!-- ===== SMM SERVICES SECTION ===== -->
+  <section class="smm-section" id="services">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <div class="badge badge-primary">
+          <i class="fas fa-bolt"></i>
+          <span>Instant Delivery</span>
+        </div>
+        <h2 class="section-title">Premium SMM Services</h2>
+        <p class="section-description">
+          Select your platform, choose service type, enter quantity manually, and watch your social media grow instantly with real engagement.
+        </p>
+      </div>
+      
+      <!-- Services Grid -->
+      <div class="services-layout">
+        <!-- Left: Order Form -->
+        <div class="order-panel">
+          <div class="panel-header">
+            <div class="panel-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div>
+              <h3 class="panel-title">New Order</h3>
+              <p class="panel-subtitle">Fill in your order details</p>
+            </div>
+          </div>
+          
+          <!-- Alert -->
+          <div class="alert alert-success" id="orderAlert" role="alert">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <strong>Order Created!</strong>
+              <span>Redirecting to secure payment...</span>
+            </div>
+          </div>
+          
+          <!-- Order Form -->
+          <form id="orderForm" class="order-form">
+                        <!-- Order ID Display -->
+            <div class="form-group">
+              <label class="form-label" for="orderId">
+                <i class="fas fa-hashtag"></i>
+                Order ID
+              </label>
+              <div class="order-id-box">
+                <input 
+                  type="text" 
+                  id="orderId" 
+                  class="form-input order-id-input" 
+                  readonly 
+                  value="WWC-XXXX-XXXX"
+                  aria-label="Order ID"
+                >
+                <button type="button" class="btn-icon" onclick="regenerateOrderId()" title="Generate New ID">
+                  <i class="fas fa-sync-alt"></i>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Platform Selection -->
+            <div class="form-group">
+              <label class="form-label">
+                <i class="fas fa-layer-group"></i>
+                Select Platform <span class="required">*</span>
+              </label>
+              <div class="platform-grid" role="radiogroup" aria-label="Select platform">
+                <button 
+                  type="button" 
+                  class="platform-select-btn" 
+                  data-platform="instagram"
+                  onclick="selectPlatform('instagram')"
+                  role="radio"
+                  aria-checked="false"
+                >
+                  <span class="platform-icon-mini ig">
+                    <i class="fab fa-instagram"></i>
+                  </span>
+                  <span class="platform-name">Instagram</span>
+                </button>
+                
+                <button 
+                  type="button" 
+                  class="platform-select-btn" 
+                  data-platform="youtube"
+                  onclick="selectPlatform('youtube')"
+                  role="radio"
+                  aria-checked="false"
+                >
+                  <span class="platform-icon-mini yt">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span class="platform-name">YouTube</span>
+                </button>
+                
+                <button 
+                  type="button" 
+                  class="platform-select-btn" 
+                  data-platform="tiktok"
+                  onclick="selectPlatform('tiktok')"
+                  role="radio"
+                  aria-checked="false"
+                >
+                  <span class="platform-icon-mini tk">
+                    <i class="fab fa-tiktok"></i>
+                  </span>
+                  <span class="platform-name">TikTok</span>
+                </button>
+                
+                <button 
+                  type="button" 
+                  class="platform-select-btn" 
+                  data-platform="telegram"
+                  onclick="selectPlatform('telegram')"
+                  role="radio"
+                  aria-checked="false"
+                >
+                  <span class="platform-icon-mini tg">
+                    <i class="fab fa-telegram"></i>
+                  </span>
+                  <span class="platform-name">Telegram</span>
+                </button>
+                
+                <button 
+                  type="button" 
+                  class="platform-select-btn" 
+                  data-platform="twitter"
+                  onclick="selectPlatform('twitter')"
+                  role="radio"
+                  aria-checked="false"
+                >
+                  <span class="platform-icon-mini tw">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+                  <span class="platform-name">Twitter</span>
+                </button>
+                
+                <button 
+                  type="button" 
+                  class="platform-select-btn" 
+                  data-platform="facebook"
+                  onclick="selectPlatform('facebook')"
+                  role="radio"
+                  aria-checked="false"
+                >
+                  <span class="platform-icon-mini fb">
+                    <i class="fab fa-facebook-f"></i>
+                  </span>
+                  <span class="platform-name">Facebook</span>
+                </button>
+              </div>
+              <input type="hidden" id="selectedPlatform" required>
+              <span class="form-error" id="platformError">Please select a platform</span>
+            </div>
+            
+            <!-- Service Selection -->
+            <div class="form-group" id="serviceGroup" style="display: none;">
+              <label class="form-label" for="serviceSelect">
+                <i class="fas fa-cog"></i>
+                Select Service <span class="required">*</span>
+              </label>
+              <div class="select-wrapper">
+                <select 
+                  id="serviceSelect" 
+                  class="form-select" 
+                  onchange="updateService()"
+                  required
+                >
+                  <option value="">Choose a service...</option>
+                </select>
+                <i class="fas fa-chevron-down select-arrow"></i>
+              </div>
+              <span class="form-error" id="serviceError">Please select a service</span>
+            </div>
+                        <!-- Link Input -->
+            <div class="form-group" id="linkGroup" style="display: none;">
+              <label class="form-label" for="profileLink">
+                <i class="fas fa-link"></i>
+                Profile/Post Link <span class="required">*</span>
+              </label>
+              <input 
+                type="url" 
+                id="profileLink" 
+                class="form-input" 
+                placeholder="https://instagram.com/username/post/..."
+                required
+              >
+              <span class="form-hint">
+                <i class="fas fa-info-circle"></i>
+                Paste the full URL of your profile or post
+              </span>
+              <span class="form-error" id="linkError">Please enter a valid URL</span>
+            </div>
+            
+            <!-- Manual Quantity Input -->
+            <div class="form-group" id="quantityGroup" style="display: none;">
+              <label class="form-label" for="quantity">
+                <i class="fas fa-sort-numeric-up"></i>
+                Enter Quantity <span class="required">*</span>
+              </label>
+              <div class="quantity-input-wrapper">
+                <button type="button" class="qty-btn qty-minus" onclick="adjustQuantity(-1)">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <input 
+                  type="number" 
+                  id="quantity" 
+                  class="form-input quantity-input" 
+                  placeholder="0"
+                  min="1"
+                  step="1"
+                  oninput="calculateTotal()"
+                  required
+                >
+                <button type="button" class="qty-btn qty-plus" onclick="adjustQuantity(1)">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="quantity-meta">
+                <span class="min-qty">Min: <strong id="minQtyDisplay">-</strong></span>
+                <span class="price-per-unit">₹<span id="pricePerUnit">-</span> per unit</span>
+              </div>
+              <span class="form-hint">
+                <i class="fas fa-hand-pointer"></i>
+                Type exact quantity you need or use +/- buttons
+              </span>
+              <span class="form-error" id="quantityError">Quantity must be at least <span id="minQtyError">-</span></span>
+            </div>
+            
+            <!-- Order Summary -->
+            <div class="order-summary" id="orderSummary" style="display: none;">
+              <div class="summary-header">
+                <i class="fas fa-receipt"></i>
+                <span>Order Summary</span>
+              </div>
+              <div class="summary-body">
+                <div class="summary-row">
+                  <span class="summary-label">Platform</span>
+                  <span class="summary-value" id="sumPlatform">-</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Service</span>
+                  <span class="summary-value" id="sumService">-</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Quantity</span>
+                  <span class="summary-value" id="sumQuantity">-</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Rate</span>
+                  <span class="summary-value">₹<span id="sumRate">-</span></span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-row summary-total">
+                  <span class="summary-label">Total Amount</span>
+                  <span class="summary-value">₹<span id="sumTotal">0</span></span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn" style="display: none;">
+              <i class="fas fa-lock"></i>
+              <span>Proceed to Secure Payment</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+          
+          <style>
+            /* ===== ORDER FORM STYLES ===== */
+            .order-panel {
+              background: white;
+              border-radius: var(--radius-xl);
+              box-shadow: var(--shadow-lg);
+              overflow: hidden;
+            }
+            
+            .panel-header {
+              display: flex;
+              align-items: center;
+              gap: 16px;
+              padding: 24px;
+              background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+              border-bottom: 1px solid #e2e8f0;
+            }
+            
+            .panel-icon {
+              width: 52px;
+              height: 52px;
+              background: var(--gradient-1);
+              color: white;
+              border-radius: var(--radius);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 22px;
+              flex-shrink: 0;
+            }
+            
+            .panel-title {
+              font-size: 20px;
+              font-weight: 700;
+              color: var(--dark);
+              margin: 0;
+            }
+            
+            .panel-subtitle {
+              font-size: 14px;
+              color: var(--gray);
+              margin: 4px 0 0;
+            }
+            
+            .order-form {
+              padding: 24px;
+            }
+            
+            /* Form Elements */
+            .form-group {
+              margin-bottom: 24px;
+            }
+            
+            .form-label {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              font-size: 14px;
+              font-weight: 600;
+              color: var(--dark);
+              margin-bottom: 10px;
+            }
+            
+            .form-label i {
+              color: var(--primary);
+              font-size: 14px;
+            }
+            
+            .required {
+              color: var(--danger);
+            }
+            
+            .form-input, .form-select {
+              width: 100%;
+              padding: 14px 16px;
+              font-size: 16px;
+              border: 2px solid #e2e8f0;
+              border-radius: var(--radius);
+              background: white;
+              transition: all var(--transition-fast);
+              font-family: inherit;
+            }
+            
+            .form-input:focus, .form-select:focus {
+              outline: none;
+              border-color: var(--primary);
+              box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+            }
+            
+            .form-input::placeholder {
+              color: var(--gray-light);
+            }
+            
+            /* Order ID Box */
+            .order-id-box {
+              display: flex;
+              gap: 12px;
+            }
+            
+            .order-id-input {
+              flex: 1;
+              font-family: 'SF Mono', monospace;
+              font-weight: 700;
+              color: var(--primary);
+              text-align: center;
+              letter-spacing: 1px;
+              background: #f8fafc;
+            }
+            
+            .btn-icon {
+              width: 48px;
+              height: 48px;
+              border: 2px solid #e2e8f0;
+              border-radius: var(--radius);
+              background: white;
+              color: var(--gray);
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all var(--transition-fast);
+            }
+            
+            .btn-icon:hover {
+              border-color: var(--primary);
+              color: var(--primary);
+              background: rgba(99, 102, 241, 0.05);
+            }
+            
+            .btn-icon:active {
+              transform: scale(0.95);
+            }
+            
+            /* Platform Grid */
+            .platform-grid {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 12px;
+            }
+            
+            @media (min-width: 480px) {
+              .platform-grid {
+                grid-template-columns: repeat(3, 1fr);
+              }
+            }
+            
+            .platform-select-btn {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 10px;
+              padding: 20px 12px;
+              background: white;
+              border: 2px solid #e2e8f0;
+              border-radius: var(--radius-md);
+              cursor: pointer;
+              transition: all var(--transition-fast);
+            }
+            
+            .platform-select-btn:hover {
+              border-color: var(--primary-light);
+              background: rgba(99, 102, 241, 0.02);
+            }
+            
+            .platform-select-btn.active {
+              border-color: var(--primary);
+              background: rgba(99, 102, 241, 0.08);
+              transform: scale(0.98);
+            }
+            
+            .platform-select-btn.active .platform-name {
+              color: var(--primary);
+              font-weight: 700;
+            }
+            
+            .platform-icon-mini {
+              width: 48px;
+              height: 48px;
+              border-radius: var(--radius);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 24px;
+              color: white;
+            }
+            
+            .platform-icon-mini.ig { background: linear-gradient(45deg, #f09433, #bc1888); }
+            .platform-icon-mini.yt { background: #ff0000; }
+            .platform-icon-mini.tk { background: #000; }
+            .platform-icon-mini.tg { background: #0088cc; }
+            .platform-icon-mini.tw { background: #000; }
+            .platform-icon-mini.fb { background: #1877f2; }
+            
+            .platform-name {
+              font-size: 13px;
+              font-weight: 600;
+              color: var(--dark);
+            }
+            
+            /* Select Wrapper */
+            .select-wrapper {
+              position: relative;
+            }
+            
+            .select-arrow {
+              position: absolute;
+              right: 16px;
+              top: 50%;
+              transform: translateY(-50%);
+              color: var(--gray);
+              pointer-events: none;
+              font-size: 14px;
+            }
+            
+            /* Quantity Input */
+            .quantity-input-wrapper {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+            }
+            
+            .qty-btn {
+              width: 48px;
+              height: 48px;
+              border: 2px solid #e2e8f0;
+              border-radius: var(--radius);
+              background: white;
+              color: var(--dark);
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all var(--transition-fast);
+              flex-shrink: 0;
+            }
+            
+            .qty-btn:hover {
+              border-color: var(--primary);
+              color: var(--primary);
+              background: rgba(99, 102, 241, 0.05);
+            }
+            
+            .qty-btn:active {
+              transform: scale(0.9);
+            }
+            
+            .quantity-input {
+              flex: 1;
+              text-align: center;
+              font-weight: 700;
+              font-size: 18px;
+            }
+            
+            .quantity-meta {
+              display: flex;
+              justify-content: space-between;
+              margin-top: 10px;
+              font-size: 13px;
+              color: var(--gray);
+            }
+            
+            .price-per-unit {
+              color: var(--success);
+              font-weight: 600;
+            }
+            
+            /* Form Hints & Errors */
+            .form-hint {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 13px;
+              color: var(--gray);
+              margin-top: 8px;
+            }
+            
+            .form-error {
+              display: none;
+              align-items: center;
+              gap: 6px;
+              font-size: 13px;
+              color: var(--danger);
+              margin-top: 8px;
+            }
+            
+            .form-error.visible {
+              display: flex;
+            }
+            
+            /* Order Summary */
+            .order-summary {
+              background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+              border: 2px solid #bae6fd;
+              border-radius: var(--radius-lg);
+              overflow: hidden;
+              margin: 24px 0;
+            }
+            
+            .summary-header {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              padding: 16px 20px;
+              background: rgba(255, 255, 255, 0.5);
+              border-bottom: 1px solid #bae6fd;
+              font-weight: 700;
+              color: #0369a1;
+            }
+            
+            .summary-body {
+              padding: 16px 20px;
+            }
+            
+            .summary-row {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 10px 0;
+              font-size: 14px;
+            }
+            
+            .summary-label {
+              color: var(--gray);
+            }
+            
+            .summary-value {
+              font-weight: 600;
+              color: var(--dark);
+            }
+            
+            .summary-divider {
+              height: 1px;
+              background: #bae6fd;
+              margin: 12px 0;
+            }
+            
+            .summary-total {
+              font-size: 18px;
+            }
+            
+            .summary-total .summary-label {
+              color: var(--dark);
+              font-weight: 700;
+            }
+            
+            .summary-total .summary-value {
+              color: var(--primary);
+              font-size: 24px;
+              font-weight: 800;
+            }
+            
+            /* Submit Button */
+            .btn-submit {
+              width: 100%;
+              margin-top: 8px;
+            }
+                  </style>
+                            <!-- Support Box -->
+          <div class="support-box">
+            <div class="support-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <div class="support-content">
+              <h4>Need Help?</h4>
+              <p>Didn't receive your order? Have an issue? Raise a support ticket with your Order ID and we'll resolve it within 24 hours.</p>
+            </div>
+            <button type="button" class="btn btn-support" onclick="openSupportModal()">
+              <i class="fas fa-ticket-alt"></i>
+              <span>Get Support / Raise Ticket</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Right: Info Panel -->
+        <div class="info-panel">
+          <div class="info-card">
+            <div class="info-header">
+              <div class="info-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div>
+                <h3 class="info-title">Why Choose Us?</h3>
+                <p class="info-subtitle">Trusted by 50,000+ customers</p>
+              </div>
+            </div>
+            
+            <div class="features-list">
+              <div class="feature-item">
+                <div class="feature-icon-box" style="background: rgba(245, 158, 11, 0.1); color: #d97706;">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Instant Start</h4>
+                  <p>Orders begin processing within minutes of payment</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon-box" style="background: rgba(16, 185, 129, 0.1); color: #059669;">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Real Accounts</h4>
+                  <p>100% genuine engagement from active users</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon-box" style="background: rgba(99, 102, 241, 0.1); color: var(--primary);">
+                  <i class="fas fa-undo"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Auto Refill</h4>
+                  <p>30-day refill guarantee on all services</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon-box" style="background: rgba(236, 72, 153, 0.1); color: #db2777;">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>24/7 Support</h4>
+                  <p>Round the clock assistance via tickets</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="pro-tip">
+              <div class="tip-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div class="tip-content">
+                <strong>Pro Tip</strong>
+                <p>Keep your profile public during delivery for fastest results. Private accounts may experience delays.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Trust Badges -->
+          <div class="trust-badges">
+            <div class="trust-item">
+              <i class="fas fa-shield-alt"></i>
+              <span>SSL Secure</span>
+            </div>
+            <div class="trust-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Verified</span>
+            </div>
+            <div class="trust-item">
+              <i class="fas fa-lock"></i>
+              <span>Encrypted</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ===== SMM SECTION LAYOUT ===== */
+    .smm-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    @media (min-width: 768px) {
+      .smm-section {
+        padding: 100px 0;
+      }
+    }
+    
+    /* Section Header */
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .badge-primary {
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--primary);
+    }
+    
+    .section-title {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    
+    .section-description {
+      font-size: 17px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    
+    /* Services Layout */
+    .services-layout {
+      display: grid;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 1024px) {
+      .services-layout {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 32px;
+      }
+    }
+    
+    /* Support Box */
+    .support-box {
+      margin: 24px;
+      margin-top: 0;
+      padding: 24px;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid #fcd34d;
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .support-icon {
+      width: 56px;
+      height: 56px;
+      background: #f59e0b;
+      color: white;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    
+    .support-content h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 8px;
+    }
+    
+    .support-content p {
+      font-size: 14px;
+      color: #a16207;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .btn-support {
+      width: 100%;
+      padding: 16px;
+      background: #f59e0b;
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all var(--transition-fast);
+    }
+    
+    .btn-support:hover {
+      background: #d97706;
+      transform: translateY(-2px);
+    }
+    
+    .btn-support:active {
+      transform: scale(0.98);
+    }
+    
+    /* Info Panel */
+    .info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    .info-card {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 2px solid #bae6fd;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+    
+    .info-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.5);
+      border-bottom: 1px solid #bae6fd;
+    }
+    
+    .info-icon {
+      width: 52px;
+      height: 52px;
+      background: #0284c7;
+      color: white;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    
+    .info-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0c4a6e;
+      margin: 0;
+    }
+    
+    .info-subtitle {
+      font-size: 14px;
+      color: #0369a1;
+      margin: 4px 0 0;
+    }
+    
+    /* Features List */
+    .features-list {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    
+    .feature-content h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0c4a6e;
+      margin-bottom: 4px;
+    }
+    
+    .feature-content p {
+      font-size: 14px;
+      color: #0369a1;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    /* Pro Tip */
+    .pro-tip {
+      margin: 0 24px 24px;
+      padding: 20px;
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 2px solid #fcd34d;
+      display: flex;
+      gap: 16px;
+    }
+    
+    .tip-icon {
+      width: 40px;
+      height: 40px;
+      background: #f59e0b;
+      color: white;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    
+    .tip-content strong {
+      display: block;
+      color: #92400e;
+      margin-bottom: 4px;
+    }
+    
+    .tip-content p {
+      font-size: 13px;
+      color: #a16207;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 24px;
+      background: white;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+    
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray);
+    }
+    
+    .trust-item i {
+      width: 48px;
+      height: 48px;
+      background: #f8fafc;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--primary);
+    }
+  </style>
+    <!-- ===== FEATURES SECTION ===== -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-secondary">
+          <i class="fas fa-star"></i>
+          <span>Powerful Tools</span>
+        </div>
+        <h2 class="section-title">Everything You Need to Grow</h2>
+        <p class="section-description">
+          Our platform provides all the tools and features you need to boost your social media presence effectively.
+        </p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-visual">
+            <div class="feature-icon-wrap">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="feature-float">⚡</div>
+          </div>
+          <h3 class="feature-title">Fast Processing</h3>
+          <p class="feature-desc">Our automated system ensures your orders start processing immediately after payment confirmation.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-visual">
+            <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="feature-float">📈</div>
+          </div>
+          <h3 class="feature-title">Live Tracking</h3>
+          <p class="feature-desc">Monitor your order progress in real-time with detailed analytics and delivery reports.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-visual">
+            <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+              <i class="fas fa-headset"></i>
+            </div>
+            <div class="feature-float">🎧</div>
+          </div>
+          <h3 class="feature-title">24/7 Support</h3>
+          <p class="feature-desc">Round the clock assistance from our dedicated support team via tickets and email.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-visual">
+            <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <div class="feature-float">💰</div>
+          </div>
+          <h3 class="feature-title">Best Prices</h3>
+          <p class="feature-desc">Competitive rates without compromising on quality. Best value for your investment.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-visual">
+            <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="feature-float">🔒</div>
+          </div>
+          <h3 class="feature-title">Secure Payments</h3>
+          <p class="feature-desc">Multiple secure payment options with encrypted transactions for your safety.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-visual">
+            <div class="feature-icon-wrap" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+              <i class="fas fa-sync"></i>
+            </div>
+            <div class="feature-float">🔄</div>
+          </div>
+          <h3 class="feature-title">Auto Refill</h3>
+          <p class="feature-desc">Automatic refill system ensures your counts stay stable even if drops occur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ===== FEATURES SECTION ===== */
+    .features-section {
+      padding: 80px 0;
+      background: #f8fafc;
+    }
+    
+    @media (min-width: 768px) {
+      .features-section {
+        padding: 100px 0;
+      }
+    }
+    
+    .badge-secondary {
+      background: rgba(236, 72, 153, 0.1);
+      color: var(--secondary);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 640px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 32px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      transition: all var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    .feature-visual {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    
+    .feature-icon-wrap {
+      width: 72px;
+      height: 72px;
+      background: var(--gradient-1);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+    }
+    
+    .feature-float {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: var(--shadow-md);
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .feature-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    
+    .feature-desc {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin: 0;
+    }
+  </style>
+    <!-- ===== TOP CREATORS SECTION ===== -->
+  <section class="creators-section" id="creators">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-accent">
+          <i class="fas fa-crown"></i>
+          <span>Featured</span>
+        </div>
+        <h2 class="section-title">Top Creators</h2>
+        <p class="section-description">
+          Meet our featured creators from around the world. Click on any card to view profile details.
+        </p>
+      </div>
+      
+      <div class="creators-grid">
+        <!-- Creator 1 -->
+        <article class="creator-card" onclick="openCreatorModal('Ramsha Asif', 'Karachi, Pakistan', 'Fashion & Lifestyle Creator', '27K', '98%', 'ramsha.png')">
+          <div class="creator-cover"></div>
+          <div class="creator-profile">
+            <img 
+              src="ramsha.png" 
+              alt="Ramsha Asif" 
+              class="creator-img"
+              onerror="this.src='https://ui-avatars.com/api/?name=Ramsha+Asif&background=667eea&color=fff&size=128'"
+            >
+            <div class="creator-badge">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="creator-info">
+            <h3 class="creator-name">Ramsha Asif</h3>
+            <p class="creator-niche">Fashion & Lifestyle</p>
+            <div class="creator-stats">
+              <div class="stat">
+                <span class="stat-value">27K</span>
+                <span class="stat-label">Followers</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-value">98%</span>
+                <span class="stat-label">Engagement</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Creator 2 -->
+        <article class="creator-card" onclick="openCreatorModal('Ayesha Ayub Sabri', 'Islamabad, Pakistan', 'Actress | Voice-over Artist | Model', '3.1K', '95%', 'ayeshaayub.png')">
+          <div class="creator-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+          <div class="creator-profile">
+            <img 
+              src="ayeshaayub.png" 
+              alt="Ayesha Ayub Sabri" 
+              class="creator-img"
+              onerror="this.src='https://ui-avatars.com/api/?name=Ayesha+Ayub&background=f5576c&color=fff&size=128'"
+            >
+            <div class="creator-badge">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="creator-info">
+            <h3 class="creator-name">Ayesha Ayub Sabri</h3>
+            <p class="creator-niche">Actress | Voice-over | Model</p>
+            <div class="creator-stats">
+              <div class="stat">
+                <span class="stat-value">3.1K</span>
+                <span class="stat-label">Followers</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-value">95%</span>
+                <span class="stat-label">Engagement</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Creator 3 -->
+        <article class="creator-card" onclick="openCreatorModal('Peria.M Mughal', 'Gujarat, Pakistan', 'Digital Creator | UGC Creator', '3.6K', '96%', 'creator3.png')">
+          <div class="creator-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+          <div class="creator-profile">
+            <img 
+              src="creator3.png" 
+              alt="Peria.M Mughal" 
+              class="creator-img"
+              onerror="this.src='https://ui-avatars.com/api/?name=Peria+Mughal&background=4facfe&color=fff&size=128'"
+            >
+            <div class="creator-badge">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="creator-info">
+            <h3 class="creator-name">Peria.M Mughal</h3>
+            <p class="creator-niche">Digital Creator | UGC</p>
+            <div class="creator-stats">
+              <div class="stat">
+                <span class="stat-value">3.6K</span>
+                <span class="stat-label">Followers</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-value">96%</span>
+                <span class="stat-label">Engagement</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Creator 4 -->
+        <article class="creator-card" onclick="openCreatorModal('Manshree Sengupta', 'USA (India Origin)', 'Singer • Dancer • Performer', '900+', '93%', 'creator4.png')">
+          <div class="creator-cover" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+          <div class="creator-profile">
+            <img 
+              src="creator4.png" 
+              alt="Manshree Sengupta" 
+              class="creator-img"
+              onerror="this.src='https://ui-avatars.com/api/?name=Manshree+Sengupta&background=fa709a&color=fff&size=128'"
+            >
+            <div class="creator-badge">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="creator-info">
+            <h3 class="creator-name">Manshree Sengupta</h3>
+            <p class="creator-niche">Singer • Dancer • Performer</p>
+            <div class="creator-stats">
+              <div class="stat">
+                <span class="stat-value">900+</span>
+                <span class="stat-label">Followers</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-value">93%</span>
+                <span class="stat-label">Engagement</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ===== CREATORS SECTION ===== */
+    .creators-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    @media (min-width: 768px) {
+      .creators-section {
+        padding: 100px 0;
+      }
+    }
+    
+    .badge-accent {
+      background: rgba(245, 158, 11, 0.1);
+      color: #d97706;
+    }
+    
+    .creators-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 640px) {
+      .creators-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .creators-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .creator-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: all var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .creator-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    .creator-card:active {
+      transform: scale(0.98);
+    }
+    
+    .creator-cover {
+      height: 100px;
+      background: var(--gradient-1);
+      position: relative;
+    }
+    
+    .creator-profile {
+      position: relative;
+      margin-top: -50px;
+      padding: 0 24px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .creator-img {
+      width: 100px;
+      height: 100px;
+      border-radius: var(--radius-full);
+      border: 4px solid white;
+      object-fit: cover;
+      background: white;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .creator-badge {
+      position: absolute;
+      bottom: 0;
+      right: calc(50% - 50px);
+      width: 28px;
+      height: 28px;
+      background: var(--success);
+      color: white;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      border: 2px solid white;
+    }
+    
+    .creator-info {
+      padding: 20px 24px 24px;
+      text-align: center;
+    }
+    
+    .creator-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    
+    .creator-niche {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+    
+    .creator-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-value {
+      display: block;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .stat-divider {
+      width: 1px;
+      height: 40px;
+      background: #e2e8f0;
+    }
+  </style>
+    <!-- ===== ABOUT SECTION ===== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <div class="badge badge-light">
+            <i class="fas fa-info-circle"></i>
+            <span>About Us</span>
+          </div>
+          <h2 class="about-title">Connecting Global Talent With Opportunity</h2>
+          <p class="about-text">
+            Welcome to Worldwide Collab, a platform dedicated to connecting exceptional talent from across the world with the right opportunities, collaborators, and audiences.
+          </p>
+          <p class="about-text">
+            Our mission is to showcase both emerging and established models, artists, and creators on a global stage — allowing them to express their creativity, tell their stories, and reach new heights in their careers.
+          </p>
+          <p class="about-text">
+            Whether you're a budding talent looking for a breakthrough or a brand seeking authentic collaborations, we bridge the gap between creativity and opportunity.
+          </p>
+          
+          <div class="about-actions">
+            <a href="#contact" class="btn btn-primary">
+              <i class="fas fa-handshake"></i>
+              <span>Work With Us</span>
+            </a>
+            <a href="#services" class="btn btn-outline-light">
+              <i class="fas fa-arrow-right"></i>
+              <span>Our Services</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="about-stats-grid">
+          <div class="about-stat-card">
+            <div class="stat-icon-large">
+              <i class="fas fa-globe-americas"></i>
+            </div>
+            <div class="stat-number-large">50+</div>
+            <div class="stat-label-large">Countries</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="stat-icon-large" style="background: rgba(236, 72, 153, 0.2); color: #ec4899;">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-number-large">10K+</div>
+            <div class="stat-label-large">Creators</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="stat-icon-large" style="background: rgba(16, 185, 129, 0.2); color: #10b981;">
+              <i class="fas fa-shopping-bag"></i>
+            </div>
+            <div class="stat-number-large">50K+</div>
+            <div class="stat-label-large">Orders</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="stat-icon-large" style="background: rgba(245, 158, 11, 0.2); color: #f59e0b;">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="stat-number-large">99%</div>
+            <div class="stat-label-large">Happy Clients</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ===== ABOUT SECTION ===== */
+    .about-section {
+      padding: 80px 0;
+      background: var(--gradient-1);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    @media (min-width: 768px) {
+      .about-section {
+        padding: 120px 0;
+      }
+    }
+    
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 600px;
+      height: 600px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      filter: blur(100px);
+    }
+    
+    .about-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 48px;
+    }
+    
+    @media (min-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 64px;
+      }
+    }
+    
+    .badge-light {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+    
+    .about-title {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 800;
+      margin: 16px 0 24px;
+      line-height: 1.2;
+    }
+    
+    .about-text {
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: 0.9;
+      margin-bottom: 16px;
+    }
+    
+    .about-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    
+    .btn-outline-light {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .btn-outline-light:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    /* About Stats Grid */
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    
+    @media (min-width: 640px) {
+      .about-stats-grid {
+        gap: 24px;
+      }
+    }
+    
+    .about-stat-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-xl);
+      padding: 32px 24px;
+      text-align: center;
+      transition: all var(--transition);
+    }
+    
+    .about-stat-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-4px);
+    }
+    
+    .stat-icon-large {
+      width: 64px;
+      height: 64px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 20px;
+    }
+    
+    .stat-number-large {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label-large {
+      font-size: 14px;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  </style>
+    <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-primary">
+          <i class="fas fa-envelope"></i>
+          <span>Get In Touch</span>
+        </div>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-description">
+          Have questions or want to collaborate? We'd love to hear from you. Fill out the form below.
+        </p>
+      </div>
+      
+      <div class="contact-card">
+        <div class="alert alert-success" id="contactAlert" role="alert">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Message Sent!</strong>
+            <span>We'll get back to you within 24 hours.</span>
+          </div>
+        </div>
+        
+        <form id="contactForm" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contactName">
+                Your Name <span class="required">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="contactName" 
+                name="name" 
+                class="form-input" 
+                placeholder="John Doe"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">
+                Email Address <span class="required">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="contactEmail" 
+                name="email" 
+                class="form-input" 
+                placeholder="john@example.com"
+                required
+              >
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="contactSubject">
+              Subject <span class="required">*</span>
+            </label>
+            <div class="select-wrapper">
+              <select id="contactSubject" name="subject" class="form-select" required>
+                <option value="">Select a subject...</option>
+                <option value="collaboration">🤝 Collaboration Inquiry</option>
+                <option value="services">🛒 Service Question</option>
+                <option value="support">🔧 Technical Support</option>
+                <option value="general">💬 General Inquiry</option>
+              </select>
+              <i class="fas fa-chevron-down select-arrow"></i>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="contactMessage">
+              Your Message <span class="required">*</span>
+            </label>
+            <textarea 
+              id="contactMessage" 
+              name="message" 
+              class="form-input form-textarea" 
+              placeholder="Tell us how we can help you..."
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-submit">
+            <i class="fas fa-paper-plane"></i>
+            <span>Send Message</span>
+          </button>
+        </form>
+        
+        <div class="contact-alt">
+          <div class="alt-divider">
+            <span>OR</span>
+          </div>
+          <a href="mailto:team.wwc@hotmail.com" class="btn btn-outline btn-email">
+            <i class="fas fa-envelope"></i>
+            <span>Email us directly</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      padding: 80px 0;
+      background: #f8fafc;
+    }
+    
+    @media (min-width: 768px) {
+      .contact-section {
+        padding: 100px 0;
+      }
+    }
+    
+    .contact-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 32px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    @media (min-width: 640px) {
+      .contact-card {
+        padding: 48px;
+      }
+    }
+    
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    
+    @media (min-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .form-textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+    
+    .contact-alt {
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid #e2e8f0;
+    }
+    
+    .alt-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      color: var(--gray);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .alt-divider::before,
+    .alt-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e2e8f0;
+    }
+    
+    .btn-email {
+      width: 100%;
+    }
+  </style>
+    <!-- ===== FAQ SECTION ===== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-secondary">
+          <i class="fas fa-question-circle"></i>
+          <span>FAQ</span>
+        </div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-description">
+          Everything you need to know about our services. Can't find what you're looking for? Contact us.
+        </p>
+      </div>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">
+              <span class="faq-icon">W</span>
+              What does WW Collab stand for?
+            </span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <p>WW stands for <strong>Worldwide</strong>. It highlights our mission of facilitating collaboration across the globe, connecting talents and brands from every corner of the world without borders.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">
+              <span class="faq-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">D</span>
+              How long does delivery take?
+            </span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <p>Most orders start processing within <strong>5-15 minutes</strong> and complete within 24 hours. Larger orders (100K+ quantities) may take up to 48 hours depending on the platform and current server load.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">
+              <span class="faq-icon" style="background: rgba(99, 102, 241, 0.1); color: #6366f1;">R</span>
+              Are these real followers and likes?
+            </span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <p>Yes! We provide <strong>100% real engagement</strong> from active accounts. We never use bots, fake accounts, or automated scripts that could harm your profile or violate platform terms.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">
+              <span class="faq-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">S</span>
+              Is it safe to use your services?
+            </span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <p>Absolutely safe. <strong>We never ask for your password</strong> or private login information. Just provide your public profile URL and we handle the rest using secure, encrypted methods.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">
+              <span class="faq-icon" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">N</span>
+              What if I don't receive my order?
+            </span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <p>Use our <strong>"Get Support"</strong> button to raise a ticket with your Order ID. Our team investigates within 24 hours and provides either delivery completion or a <strong>full refund</strong> if we cannot fulfill the order.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ===== FAQ SECTION ===== */
+    .faq-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    @media (min-width: 768px) {
+      .faq-section {
+        padding: 100px 0;
+      }
+    }
+    
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: white;
+      transition: all var(--transition-fast);
+    }
+    
+    .faq-item:hover {
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow);
+    }
+    
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 24px;
+      background: white;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+      transition: all var(--transition-fast);
+    }
+    
+    .faq-question:hover {
+      background: #f8fafc;
+    }
+    
+    .faq-question.active {
+      background: #f8fafc;
+    }
+    
+    .faq-q-text {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      line-height: 1.4;
+    }
+    
+    .faq-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--primary);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    
+    .faq-arrow {
+      color: var(--gray);
+      transition: transform var(--transition);
+      flex-shrink: 0;
+    }
+    
+    .faq-question.active .faq-arrow {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      display: none;
+      padding: 0 24px 24px 80px;
+      color: var(--gray);
+      font-size: 15px;
+      line-height: 1.7;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .faq-answer.active {
+      display: block;
+    }
+    
+    .faq-answer p {
+      margin: 0;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 640px) {
+      .faq-question {
+        padding: 16px 20px;
+        font-size: 15px;
+      }
+      
+      .faq-q-text {
+        gap: 12px;
+      }
+      
+      .faq-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+      
+      .faq-answer {
+        padding: 0 20px 20px 68px;
+        font-size: 14px;
+      }
+    }
+  </style>
+    <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <!-- Partners Section -->
+      <div class="footer-partners">
+        <h3 class="partners-title">Our Trusted Partners</h3>
+        <div class="partners-logos">
+          <img src="logo2.png" alt="Worldwide Collab Partner" onerror="this.style.display='none'">
+          <img src="logo4.png" alt="NexTune Network" onerror="this.style.display='none'">
+          <div class="partner-fallback">
+            <i class="fas fa-handshake"></i>
+            <span>NexTune Network</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Main -->
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">
+            <div class="footer-logo-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <span>Worldwide Collab</span>
+          </a>
+          <p class="footer-tagline">Empowering Global Creators & Brands Since 2022</p>
+        </div>
+        
+        <div class="footer-social">
+          <a href="https://instagram.com/ww_collab" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Telegram">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="mailto:team.wwc@hotmail.com" class="social-link" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Footer Links -->
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#features">Features</a>
+        <a href="#creators">Creators</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#" onclick="openLegalModal('privacy')">Privacy</a>
+        <a href="#" onclick="openLegalModal('terms')">Terms</a>
+      </div>
+      
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; 2024-26 <strong>WW Collab</strong>. All Rights Reserved.
+        </p>
+        <p class="contact-email">
+          <i class="fas fa-envelope"></i>
+          team.wwc@hotmail.com
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: var(--dark);
+      color: white;
+      padding: 64px 0 32px;
+    }
+    
+    /* Partners */
+    .footer-partners {
+      text-align: center;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 48px;
+    }
+    
+    .partners-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+    
+    .partners-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    
+    .partners-logos img {
+      height: 48px;
+      opacity: 0.6;
+      transition: opacity var(--transition);
+      filter: brightness(0) invert(1);
+    }
+    
+    .partners-logos img:hover {
+      opacity: 1;
+    }
+    
+    .partner-fallback {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .partner-fallback i {
+      font-size: 28px;
+      color: var(--primary-light);
+    }
+    
+    /* Footer Main */
+    .footer-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-main {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 800;
+    }
+    
+    .footer-logo-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient-1);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    
+    .footer-tagline {
+      font-size: 15px;
+      color: var(--gray-light);
+      margin: 12px 0 0;
+    }
+    
+    /* Social Links */
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+    
+    .social-link {
+      width: 52px;
+      height: 52px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+    
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-4px);
+    }
+    
+    .social-link:active {
+      transform: scale(0.95);
+    }
+    
+    /* Footer Links */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 32px;
+      padding: 32px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 32px;
+    }
+    
+    .footer-links a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    /* Footer Bottom */
+    .footer-bottom {
+      text-align: center;
+    }
+    
+    .copyright-text {
+      font-size: 15px;
+      color: var(--gray-light);
+      margin-bottom: 12px;
+    }
+    
+    .copyright-text strong {
+      color: white;
+    }
+    
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-light);
+      font-size: 15px;
+      font-weight: 600;
+    }
+  </style>
+    <!-- ===== SUPPORT MODAL ===== -->
+  <div class="modal" id="supportModal" role="dialog" aria-modal="true" aria-labelledby="supportTitle">
+    <div class="modal-overlay" onclick="closeSupportModal()"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <div>
+          <h3 class="modal-title" id="supportTitle">Support Ticket</h3>
+          <p class="modal-subtitle">We'll respond within 24 hours</p>
+        </div>
+        <button class="modal-close-btn" onclick="closeSupportModal()" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="alert alert-success" id="ticketAlert" role="alert">
+          <i class="fas fa-check-circle"></i>
+          <span>Ticket submitted successfully!</span>
+        </div>
+        
+        <form id="ticketForm" class="modal-form">
+          <div class="form-group">
+            <label class="form-label" for="ticketOrderId">
+              Order ID <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="ticketOrderId" 
+              class="form-input" 
+              placeholder="WWC-XXXX-XXXX"
+              required
+            >
+            <span class="form-hint">Found in your order confirmation</span>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="ticketEmail">
+              Your Email <span class="required">*</span>
+            </label>
+            <input 
+              type="email" 
+              id="ticketEmail" 
+              class="form-input" 
+              placeholder="your@email.com"
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="ticketType">
+              Issue Type <span class="required">*</span>
+            </label>
+            <div class="select-wrapper">
+              <select id="ticketType" class="form-select" required>
+                <option value="">Select issue type...</option>
+                <option value="not_received">❌ Order not received</option>
+                <option value="partial">⚠️ Partial delivery</option>
+                <option value="drops">📉 Followers/Likes dropped</option>
+                <option value="wrong">🔢 Wrong quantity</option>
+                <option value="other">📝 Other issue</option>
+              </select>
+              <i class="fas fa-chevron-down select-arrow"></i>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="ticketDesc">
+              Description <span class="required">*</span>
+            </label>
+            <textarea 
+              id="ticketDesc" 
+              class="form-input form-textarea" 
+              placeholder="Describe your issue in detail..."
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-submit">
+            <i class="fas fa-paper-plane"></i>
+            <span>Submit Ticket</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CREATOR MODAL ===== -->
+  <div class="modal" id="creatorModal" role="dialog" aria-modal="true" aria-labelledby="creatorName">
+    <div class="modal-overlay" onclick="closeCreatorModal()"></div>
+    <div class="modal-container modal-sm">
+      <button class="modal-close-btn" onclick="closeCreatorModal()" aria-label="Close modal" style="position: absolute; top: 16px; right: 16px; z-index: 10;">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body text-center" id="creatorModalContent">
+        <!-- Dynamic content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LEGAL MODAL ===== -->
+  <div class="modal" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+    <div class="modal-overlay" onclick="closeLegalModal()"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="legalTitle">Legal Information</h3>
+        <button class="modal-close-btn" onclick="closeLegalModal()" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="legalModalContent">
+        <!-- Dynamic content -->
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* ===== MODALS ===== */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition);
+    }
+    
+    @media (min-width: 640px) {
+      .modal {
+        align-items: center;
+        padding: 20px;
+      }
+    }
+    
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+    }
+    
+    .modal-container {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      background: white;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      overflow: hidden;
+      transform: translateY(100%);
+      transition: transform var(--transition);
+    }
+    
+    @media (min-width: 640px) {
+      .modal-container {
+        border-radius: var(--radius-xl);
+        transform: translateY(20px) scale(0.95);
+      }
+    }
+    
+    .modal.active .modal-container {
+      transform: translateY(0) scale(1);
+    }
+    
+    .modal-sm {
+      max-width: 400px;
+    }
+    
+    .modal-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-bottom: 1px solid #e2e8f0;
+      position: relative;
+    }
+    
+    .modal-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gradient-1);
+      color: white;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    
+    .modal-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 0;
+    }
+    
+    .modal-subtitle {
+      font-size: 14px;
+      color: var(--gray);
+      margin: 4px 0 0;
+    }
+    
+    .modal-close-btn {
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: white;
+      border-radius: var(--radius);
+      color: var(--gray);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .modal-close-btn:hover {
+      color: var(--dark);
+      background: #f1f5f9;
+    }
+    
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      max-height: calc(90vh - 100px);
+    }
+    
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    /* Alert in modal */
+    .alert {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+    }
+    
+    .alert-success {
+      display: flex;
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    
+    .alert i {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+  </style>
+    <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // ===== DATA =====
+    const servicesData = {
+      instagram: {
+        name: 'Instagram',
+        services: {
+          'followers': { name: 'Real Followers', price: 0.13, min: 100 },
+          'likes': { name: 'Post Likes', price: 0.02, min: 100 },
+          'views': { name: 'Video Views', price: 0.003, min: 1000 },
+          'comments': { name: 'Custom Comments', price: 2.00, min: 10 },
+          'story_views': { name: 'Story Views', price: 0.01, min: 100 }
+        }
+      },
+      youtube: {
+        name: 'YouTube',
+        services: {
+          'subscribers': { name: 'Real Subscribers', price: 0.15, min: 1000 },
+          'views': { name: 'Video Views', price: 0.07, min: 1000 },
+          'likes': { name: 'Video Likes', price: 0.15, min: 1000 },
+          'watch_hours': { name: 'Watch Hours', price: 5.50, min: 10 }
+        }
+      },
+      tiktok: {
+        name: 'TikTok',
+        services: {
+          'followers': { name: 'Real Followers', price: 0.13, min: 1000 },
+          'likes': { name: 'Video Likes', price: 0.09, min: 1000 },
+          'views': { name: 'Video Views', price: 0.058, min: 10000 },
+          'shares': { name: 'Shares', price: 0.55, min: 20 }
+        }
+      },
+      telegram: {
+        name: 'Telegram',
+        services: {
+          'members': { name: 'Channel Members', price: 0.20, min: 1000 },
+          'group_members': { name: 'Group Members', price: 0.17, min: 1000 },
+          'post_views': { name: 'Post Views', price: 0.07, min: 1000 }
+        }
+      },
+      twitter: {
+        name: 'Twitter',
+        services: {
+          'followers': { name: 'Real Followers', price: 0.25, min: 1000 },
+          'likes': { name: 'Tweet Likes', price: 0.13, min: 1000 },
+          'retweets': { name: 'Retweets', price: 0.20, min: 500 }
+        }
+      },
+      facebook: {
+        name: 'Facebook',
+        services: {
+          'page_likes': { name: 'Page Likes', price: 0.30, min: 1000 },
+          'post_likes': { name: 'Post Likes', price: 0.11, min: 1000 },
+          'followers': { name: 'Profile Followers', price: 0.35, min: 1000 }
+        }
+      }
+    };
+
+    let currentPlatform = '';
+    let currentService = '';
+    let currentServiceData = null;
+
+    // ===== INITIALIZATION =====
+    document.addEventListener('DOMContentLoaded', function() {
+      generateOrderId();
+      initHeaderScroll();
+      initSmoothScroll();
+    });
+
+    // ===== HEADER =====
+    function initHeaderScroll() {
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    }
+
+    function toggleMenu() {
+      const btn = document.getElementById('menuBtn');
+      const nav = document.getElementById('mobileNav');
+      const isOpen = nav.classList.toggle('active');
+      btn.classList.toggle('active', isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+      nav.setAttribute('aria-hidden', !isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      const btn = document.getElementById('menuBtn');
+      const nav = document.getElementById('mobileNav');
+      nav.classList.remove('active');
+      btn.classList.remove('active');
+      btn.setAttribute('aria-expanded', 'false');
+      nav.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // ===== ORDER FORM =====
+    function generateOrderId() {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let id = 'WWC-';
+      for (let i = 0; i < 4; i++) id += chars.charAt(Math.floor(Math.random() * chars.length));
+      id += '-';
+      for (let i = 0; i < 4; i++) id += chars.charAt(Math.floor(Math.random() * chars.length));
+      document.getElementById('orderId').value = id;
+    }
+
+    function regenerateOrderId() {
+      generateOrderId();
+      const btn = event.currentTarget;
+      btn.querySelector('i').classList.add('fa-spin');
+      setTimeout(() => btn.querySelector('i').classList.remove('fa-spin'), 500);
+    }
+
+    function selectPlatform(platform) {
+      currentPlatform = platform;
+      document.getElementById('selectedPlatform').value = platform;
+      
+      // Update UI
+      document.querySelectorAll('.platform-select-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-checked', 'false');
+      });
+      event.currentTarget.classList.add('active');
+      event.currentTarget.setAttribute('aria-checked', 'true');
+      
+      // Populate services
+      const serviceSelect = document.getElementById('serviceSelect');
+      serviceSelect.innerHTML = '<option value="">Choose a service...</option>';
+      
+      const platformData = servicesData[platform];
+      for (const [key, value] of Object.entries(platformData.services)) {
+        const option = document.createElement('option');
+        option.value = key;
+        option.textContent = `${value.name} (₹${value.price}/unit)`;
+        option.dataset.price = value.price;
+        option.dataset.min = value.min;
+        serviceSelect.appendChild(option);
+      }
+      
+      // Show service select
+      document.getElementById('serviceGroup').style.display = 'block';
+      document.getElementById('linkGroup').style.display = 'none';
+      document.getElementById('quantityGroup').style.display = 'none';
+      document.getElementById('orderSummary').style.display = 'none';
+      document.getElementById('submitBtn').style.display = 'none';
+      
+      // Scroll to on mobile
+      if (window.innerWidth < 768) {
+        document.getElementById('serviceGroup').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function updateService() {
+      const select = document.getElementById('serviceSelect');
+      const selectedOption = select.options[select.selectedIndex];
+      
+      if (!select.value) {
+        document.getElementById('linkGroup').style.display = 'none';
+        document.getElementById('quantityGroup').style.display = 'none';
+        return;
+      }
+      
+      currentService = select.value;
+      currentServiceData = {
+        price: parseFloat(selectedOption.dataset.price),
+        min: parseInt(selectedOption.dataset.min),
+        name: selectedOption.textContent.split(' (')[0]
+      };
+      
+      // Update quantity fields
+      document.getElementById('minQtyDisplay').textContent = currentServiceData.min.toLocaleString();
+      document.getElementById('minQtyError').textContent = currentServiceData.min.toLocaleString();
+      document.getElementById('pricePerUnit').textContent = currentServiceData.price;
+      
+      const qtyInput = document.getElementById('quantity');
+      qtyInput.min = currentServiceData.min;
+      qtyInput.value = '';
+      qtyInput.placeholder = `Minimum ${currentServiceData.min}`;
+      
+      // Show fields
+      document.getElementById('linkGroup').style.display = 'block';
+      document.getElementById('quantityGroup').style.display = 'block';
+      
+      if (window.innerWidth < 768) {
+        document.getElementById('linkGroup').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function adjustQuantity(delta) {
+      const input = document.getElementById('quantity');
+      const current = parseInt(input.value) || 0;
+      const newValue = Math.max(currentServiceData?.min || 1, current + delta);
+      input.value = newValue;
+      calculateTotal();
+    }
+
+    function calculateTotal() {
+      const platform = document.getElementById('selectedPlatform').value;
+      const quantity = parseInt(document.getElementById('quantity').value) || 0;
+      
+      if (!platform || !currentServiceData || !quantity) {
+        document.getElementById('orderSummary').style.display = 'none';
+        document.getElementById('submitBtn').style.display = 'none';
+        return;
+      }
+      
+      // Validate minimum
+      if (quantity < currentServiceData.min) {
+        document.getElementById('quantityError').classList.add('visible');
+        document.getElementById('orderSummary').style.display = 'none';
+        document.getElementById('submitBtn').style.display = 'none';
+        return;
+      } else {
+        document.getElementById('quantityError').classList.remove('visible');
+      }
+      
+      const total = (currentServiceData.price * quantity).toFixed(2);
+      
+      // Update summary
+      document.getElementById('sumPlatform').textContent = servicesData[platform].name;
+      document.getElementById('sumService').textContent = currentServiceData.name;
+      document.getElementById('sumQuantity').textContent = quantity.toLocaleString();
+      document.getElementById('sumRate').textContent = currentServiceData.price;
+      document.getElementById('sumTotal').textContent = total;
+      
+      document.getElementById('orderSummary').style.display = 'block';
+      document.getElementById('submitBtn').style.display = 'flex';
+      
+      if (window.innerWidth < 768) {
+        document.getElementById('orderSummary').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // Form Submit
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const orderData = {
+        orderId: document.getElementById('orderId').value,
+        platform: currentPlatform,
+        platformName: servicesData[currentPlatform].name,
+        service: currentService,
+        serviceName: currentServiceData.name,
+        link: document.getElementById('profileLink').value,
+        quantity: document.getElementById('quantity').value,
+        amount: document.getElementById('sumTotal').textContent,
+        rate: currentServiceData.price
+      };
+      
+      sessionStorage.setItem('wwc_order', JSON.stringify(orderData));
+      
+      // Show success
+      document.getElementById('orderAlert').style.display = 'flex';
+      
+      // Redirect
+      setTimeout(() => {
+        window.location.href = 'payment.html';
+      }, 1200);
+    });
+
+    // ===== SUPPORT MODAL =====
+    function openSupportModal() {
+      const modal = document.getElementById('supportModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSupportModal() {
+      const modal = document.getElementById('supportModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      // Reset form after animation
+      setTimeout(() => {
+        document.getElementById('ticketForm').reset();
+        document.getElementById('ticketAlert').style.display = 'none';
+      }, 300);
+    }
+
+    document.getElementById('ticketForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = {
+        orderId: document.getElementById('ticketOrderId').value,
+        email: document.getElementById('ticketEmail').value,
+        type: document.getElementById('ticketType').value,
+        description: document.getElementById('ticketDesc').value,
+        date: new Date().toLocaleString()
+      };
+      
+      // Submit to FormSubmit
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://formsubmit.co/ajax/team.wwc@hotmail.com';
+      
+      const fields = {
+        _subject: `Support Ticket - ${formData.orderId}`,
+        Order_ID: formData.orderId,
+        Email: formData.email,
+        Issue_Type: formData.type,
+        Description: formData.description,
+        Date: formData.date
+      };
+      
+      for (const [key, value] of Object.entries(fields)) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
+      }
+      
+      document.body.appendChild(form);
+      form.submit();
+      
+      // Show success
+      document.getElementById('ticketAlert').style.display = 'flex';
+      
+      // Close after delay
+      setTimeout(closeSupportModal, 2000);
+    });
+
+    // ===== CREATOR MODAL =====
+    function openCreatorModal(name, location, niche, followers, engagement, img) {
+      const modal = document.getElementById('creatorModal');
+      const content = document.getElementById('creatorModalContent');
+      
+      content.innerHTML = `
+        <div style="width: 120px; height: 120px; background: var(--gradient-1); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px; font-weight: 700; box-shadow: var(--shadow-lg);">
+          ${name.charAt(0)}
+        </div>
+        <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 8px; color: var(--dark);">${name}</h2>
+        <p style="color: var(--gray); margin-bottom: 24px; font-size: 15px;">
+          <i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--danger);"></i>${location}
+        </p>
+        
+        <div style="background: #f8fafc; padding: 20px; border-radius: var(--radius-lg); margin-bottom: 24px;">
+          <p style="margin: 0; color: var(--dark); font-weight: 500;">${niche}</p>
+        </div>
+        
+        <div style="display: flex; justify-content: center; gap: 48px; margin-bottom: 24px;">
+          <div style="text-align: center;">
+            <div style="font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 4px;">${followers}</div>
+            <div style="font-size: 13px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px;">Followers</div>
+          </div>
+          <div style="width: 1px; background: #e2e8f0;"></div>
+          <div style="text-align: center;">
+            <div style="font-size: 32px; font-weight: 800; color: var(--success); margin-bottom: 4px;">${engagement}</div>
+            <div style="font-size: 13px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px;">Engagement</div>
+          </div>
+        </div>
+        
+        <button class="btn btn-primary" style="width: 100%;" onclick="alert('Collaboration request feature coming soon!')">
+          <i class="fas fa-handshake"></i>
+          <span>Request Collaboration</span>
+        </button>
+      `;
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCreatorModal() {
+      document.getElementById('creatorModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ===== FAQ =====
+    function toggleFaq(button) {
+      const isActive = button.classList.contains('active');
+      
+      // Close all
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('active');
+        q.setAttribute('aria-expanded', 'false');
+      });
+      document.querySelectorAll('.faq-answer').forEach(a => {
+        a.classList.remove('active');
+        a.setAttribute('aria-hidden', 'true');
+      });
+      
+      // Open clicked if wasn't active
+      if (!isActive) {
+        button.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+        button.nextElementSibling.classList.add('active');
+        button.nextElementSibling.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    // ===== CONTACT FORM =====
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      
+      fetch('https://formsubmit.co/ajax/team.wwc@hotmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          subject: formData.get('subject'),
+          message: formData.get('message'),
+          _subject: `Contact Form: ${formData.get('subject')}`,
+          _replyto: formData.get('email')
+        })
+      })
+      .then(() => {
+        document.getElementById('contactAlert').style.display = 'flex';
+        this.reset();
+        setTimeout(() => {
+          document.getElementById('contactAlert').style.display = 'none';
+        }, 5000);
+      });
+    });
+
+    // ===== LEGAL MODAL =====
+    function openLegalModal(type) {
+      const modal = document.getElementById('legalModal');
+      const title = document.getElementById('legalTitle');
+      const content = document.getElementById('legalModalContent');
+      
+      if (type === 'privacy') {
+        title.textContent = 'Privacy Policy';
+        content.innerHTML = `
+          <div style="color: var(--gray); line-height: 1.8; font-size: 15px;">
+            <p style="margin-bottom: 16px;">At Worldwide Collab, we prioritize your privacy and are committed to protecting your personal information. When you visit our website, we may collect non-personal data such as cookies to enhance user experience.</p>
+            <p style="margin-bottom: 16px;">Personal information, like your name or email, is collected only if voluntarily provided through forms or subscriptions. We never share or sell your data to third parties, except when required by law.</p>
+            <p>All data is securely stored and used solely to improve our services or respond to your inquiries. By using our website, you consent to this policy.</p>
+          </div>
+        `;
+      } else {
+        title.textContent = 'Terms & Conditions';
+        content.innerHTML = `
+          <div style="color: var(--gray); line-height: 1.8; font-size: 15px;">
+            <p style="margin-bottom: 16px;">Welcome to Worldwide Collab. By accessing our website, you agree to comply with these terms and conditions. All content on the site is for informational purposes only and is protected by copyright laws.</p>
+            <p style="margin-bottom: 16px;">You may not reproduce or redistribute any material without prior permission. Users must refrain from any actions that harm the website or its functionality.</p>
+            <p>We reserve the right to modify content or these terms at any time without notice. Continued use of the site implies acceptance of these terms.</p>
+          </div>
+        `;
+      }
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLegalModal() {
+      document.getElementById('legalModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ===== SMOOTH SCROLL =====
+    function initSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            const offset = 80;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+    }
+
+    // ===== KEYBOARD NAVIGATION =====
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeSupportModal();
+        closeCreatorModal();
+        closeLegalModal();
+        closeMenu();
+      }
+    });
+  </script>
+</body>
+</html>
