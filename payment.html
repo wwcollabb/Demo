@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Payment - Worldwide Collab</title>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+    })();
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #ec4899;
+      --accent: #8b5cf6;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --success: #10b981;
+      --warning: #f59e0b;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .payment-container {
+      background: white;
+      border-radius: 30px;
+      padding: 50px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .payment-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .header h1 {
+      color: var(--dark);
+      font-size: 32px;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+    
+    .header p {
+      color: var(--gray);
+      font-size: 16px;
+    }
+    
+    .order-summary {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      border: 2px solid #bae6fd;
+    }
+    
+    .order-id {
+      display: inline-block;
+      background: var(--dark);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #cbd5e1;
+      font-size: 15px;
+    }
+    
+    .summary-row:last-child {
+      border-bottom: none;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--primary);
+      margin-top: 10px;
+      padding-top: 20px;
+      border-top: 2px solid var(--primary);
+    }
+    
+    .payment-methods {
+      margin: 30px 0;
+    }
+    
+    .payment-methods h3 {
+      margin-bottom: 20px;
+      color: var(--dark);
+      font-size: 20px;
+    }
+    
+    .upi-box {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      margin-bottom: 20px;
+      border: 2px solid #f59e0b;
+    }
+    
+    .upi-id {
+      font-size: 28px;
+      font-weight: 800;
+      color: #92400e;
+      margin: 15px 0;
+      letter-spacing: 1px;
+    }
+    
+    .qr-code {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      background: white;
+      padding: 15px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .qr-code img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 15px;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    }
+    
+    .file-input-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .file-input-wrapper input[type=file] {
+      position: absolute;
+      left: -9999px;
+    }
+    
+    .file-input-label {
+      display: block;
+      padding: 16px;
+      background: #f1f5f9;
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: var(--gray);
+    }
+    
+    .file-input-label:hover {
+      background: #e2e8f0;
+      border-color: var(--primary);
+    }
+    
+    .btn-pay {
+      background: linear-gradient(135deg, var(--success), #059669);
+      color: white;
+      border: none;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+    }
+    
+    .btn-pay:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+    }
+    
+    .timer {
+      text-align: center;
+      margin: 20px 0;
+      padding: 15px;
+      background: #fee2e2;
+      border-radius: 12px;
+      color: #dc2626;
+      font-weight: 600;
+    }
+    
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 40px;
+    }
+    
+    .success-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--success), #059669);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      font-size: 50px;
+      color: white;
+      animation: scaleIn 0.5s;
+    }
+    
+    @keyframes scaleIn {
+      0% { transform: scale(0); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    
+    .back-link:hover {
+      color: var(--secondary);
+    }
+    
+    @media (max-width: 600px) {
+      .payment-container {
+        padding: 30px 20px;
+      }
+      
+      .header h1 {
+        font-size: 24px;
+      }
+      
+      .upi-id {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="payment-container" id="paymentContainer">
+  <div class="header">
+    <h1>🔒 Complete Your Payment</h1>
+    <p>Please review your order details and complete the payment</p>
+  </div>
+  
+  <div class="order-summary" id="orderSummary">
+    <div style="text-align: center;">
+      <div class="order-id" id="displayOrderId">Loading...</div>
+    </div>
+    <div class="summary-row">
+      <span>Platform</span>
+      <span id="displayPlatform" style="text-transform: capitalize;">-</span>
+    </div>
+    <div class="summary-row">
+      <span>Service</span>
+      <span id="displayService">-</span>
+    </div>
+    <div class="summary-row">
+      <span>Quantity</span>
+      <span id="displayQuantity">-</span>
+    </div>
+    <div class="summary-row">
+      <span>Profile URL</span>
+      <span id="displayUrl" style="font-size: 12px; max-width: 200px; overflow: hidden; text-overflow: ellipsis;">-</span>
+    </div>
+    <div class="summary-row">
+      <span>Total Amount</span>
+      <span>₹<span id="displayAmount">0</span></span>
+    </div>
+  </div>
+  
+  <div class="payment-methods">
+    <h3>💳 Payment Method</h3>
+    <div class="upi-box">
+      <div style="font-weight: 600; color: #92400e; margin-bottom: 10px;">Pay via UPI</div>
+      <div class="upi-id">nextune@upi</div>
+      <div style="font-size: 14px; color: #92400e; margin-bottom: 15px;">Or scan QR code below</div>
+      <div class="qr-code">
+        <img src="qrcode.png" alt="UPI QR Code">
+      </div>
+    </div>
+  </div>
+  
+  <div class="timer">
+    ⏱️ Payment window closes in: <span id="countdown" style="font-size: 20px;">05:00</span>
+  </div>
+  
+  <form id="paymentForm" onsubmit="submitPayment(event)">
+    <div class="form-group">
+      <label>UPI Transaction ID *</label>
+      <input type="text" id="transactionId" placeholder="e.g., 123456789012" required>
+    </div>
+    
+    <div class="form-group">
+      <label>Screenshot of Payment *</label>
+      <div class="file-input-wrapper">
+        <input type="file" id="paymentScreenshot" accept="image/*" required onchange="updateFileName(this)">
+        <label for="paymentScreenshot" class="file-input-label" id="fileLabel">
+          📷 Click to upload payment screenshot
+        </label>
+      </div>
+    </div>
+    
+    <button type="submit" class="btn-pay">
+      ✅ Confirm Payment & Submit Order
+    </button>
+  </form>
+</div>
+
+<div class="payment-container success-message" id="successContainer">
+  <div class="success-icon">✓</div>
+  <h2 style="color: var(--success); margin-bottom: 15px;">Payment Successful!</h2>
+  <p style="color: var(--gray); margin-bottom: 20px; font-size: 16px; line-height: 1.6;">
+    Your order has been submitted successfully.<br>
+    Order ID: <strong id="successOrderId"></strong><br>
+    A confirmation email has been sent to your email address.
+  </p>
+  <p style="color: var(--gray); font-size: 14px;">
+    We will process your order within 24 hours.
+  </p>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</div>
+
+<script>
+  let orderData = null;
+  let timeLeft = 300; // 5 minutes
+  
+  // Load order data from sessionStorage
+  window.onload = function() {
+    const stored = sessionStorage.getItem('wwc_order');
+    if (!stored) {
+      alert('No order found. Please place an order first.');
+      window.location.href = 'index.html';
+      return;
+    }
+    
+    orderData = JSON.parse(stored);
+    
+    // Display order details
+    document.getElementById('displayOrderId').textContent = orderData.orderId;
+    document.getElementById('displayPlatform').textContent = orderData.platform;
+    document.getElementById('displayService').textContent = orderData.service;
+    document.getElementById('displayQuantity').textContent = orderData.quantity;
+    document.getElementById('displayUrl').textContent = orderData.url;
+    document.getElementById('displayAmount').textContent = orderData.amount;
+    document.getElementById('successOrderId').textContent = orderData.orderId;
+    
+    // Start countdown
+    startTimer();
+  };
+  
+  function startTimer() {
+    const countdown = setInterval(() => {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      document.getElementById('countdown').textContent = 
+        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        alert('Payment window expired. Please place your order again.');
+        sessionStorage.removeItem('wwc_order');
+        window.location.href = 'index.html';
+      }
+      timeLeft--;
+    }, 1000);
+  }
+  
+  function updateFileName(input) {
+    const label = document.getElementById('fileLabel');
+    if (input.files && input.files[0]) {
+      label.textContent = '📷 ' + input.files[0].name;
+      label.style.background = '#dcfce7';
+      label.style.borderColor = '#22c55e';
+      label.style.color = '#166534';
+    }
+  }
+  
+  function submitPayment(event) {
+    event.preventDefault();
+    
+    const transactionId = document.getElementById('transactionId').value;
+    const screenshot = document.getElementById('paymentScreenshot').files[0];
+    
+    if (!transactionId || !screenshot) {
+      alert('Please fill all required fields');
+      return;
+    }
+    
+    // Prepare form data for FormSubmit
+    const formData = new FormData();
+    formData.append('Order ID', orderData.orderId);
+    formData.append('Platform', orderData.platform);
+    formData.append('Service', orderData.service);
+    formData.append('URL', orderData.url);
+    formData.append('Quantity', orderData.quantity);
+    formData.append('Amount', '₹' + orderData.amount);
+    formData.append('Customer Email', orderData.email);
+    formData.append('Transaction ID', transactionId);
+    formData.append('Order Date', new Date().toLocaleString());
+    formData.append('Screenshot', screenshot);
+    formData.append('_subject', `New Payment Received - Order ${orderData.orderId}`);
+    formData.append('_template', 'table');
+    formData.append('_replyto', orderData.email);
+    
+    // Send to FormSubmit
+    fetch('https://formsubmit.co/ajax/team.wwc@hotmail.com', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Send confirmation email to customer via EmailJS
+      sendCustomerConfirmation();
+      
+      // Show success
+      document.getElementById('paymentContainer').style.display = 'none';
+      document.getElementById('successContainer').style.display = 'block';
+      
+      // Clear sessionStorage
+      sessionStorage.removeItem('wwc_order');
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Error submitting payment. Please email us directly at team.wwc@hotmail.com with your Order ID and transaction details.');
+    });
+  }
+  
+  function sendCustomerConfirmation() {
+    // EmailJS template parameters
+    const templateParams = {
+      to_email: orderData.email,
+      order_id: orderData.orderId,
+      platform: orderData.platform,
+      service: orderData.service,
+      quantity: orderData.quantity,
+      amount: orderData.amount,
+      transaction_id: document.getElementById('transactionId').value
+    };
+    
+    // Send email using EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+      .then(function(response) {
+        console.log('Email sent successfully:', response);
+      }, function(error) {
+        console.error('Email failed:', error);
+      });
+  }
+</script>
+
+</body>
+</html>
