@@ -1394,17 +1394,30 @@
 </div>
 
 <script>
-  // ===== CONFIGURATION =====
+  // ===== EMAILJS CONFIGURATION =====
   const CONFIG = {
     adminEmail: 'team.wwc@hotmail.com',
     emailjsUserId: '5Gvu19EQdBGPu9fXt',
     emailjsServiceId: 'service_xctfgme',
-    emailjsTemplateId: 'template_9lzbn59'
+    emailjsTemplateId: 'template_9lzbn59',
+    emailjsPublicKey: '5Gvu19EQdBGPu9fXt' // Same as User ID for newer versions
   };
   
-  // Initialize EmailJS
+  // Initialize EmailJS with latest method
   (function() {
-    emailjs.init(CONFIG.emailjsUserId);
+    try {
+      // Try newer initialization first
+      if (typeof emailjs !== 'undefined') {
+        emailjs.init({
+          publicKey: CONFIG.emailjsPublicKey,
+        });
+        console.log('✅ EmailJS initialized successfully');
+      } else {
+        console.error('❌ EmailJS library not loaded');
+      }
+    } catch (error) {
+      console.error('❌ EmailJS initialization error:', error);
+    }
   })();
   
   // ===== SERVICES DATA =====
