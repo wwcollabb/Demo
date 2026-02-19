@@ -506,18 +506,6 @@
 </div>
 
 <script>
-  // ===== CONFIGURATION =====
-  const CONFIG = {
-    adminEmail: 'team.wwc@hotmail.com',
-    emailjsUserId: '5Gvu19EQdBGPu9fXt',
-    emailjsServiceId: 'service_xctfgme',
-    emailjsTemplateId: 'template_9lzbn59'
-  };
-  
-  // Initialize EmailJS
-  (function() {
-    emailjs.init(CONFIG.emailjsUserId);
-  })();
   
   let orderData = null;
   let timeLeft = 300; // 5 minutes
@@ -623,19 +611,6 @@
       customerEmail: customerEmail,
       transactionId: transactionId,
       paymentDate: new Date().toLocaleString()
-    };
-    
-    // 1. Send confirmation email to customer via EmailJS
-    const customerTemplateParams = {
-      to_email: customerEmail,
-      to_name: customerEmail.split('@')[0],
-      order_id: orderData.orderId,
-      platform: orderData.platform,
-      service: orderData.service,
-      quantity: orderData.quantity,
-      amount: orderData.amount,
-      transaction_id: transactionId,
-      reply_to: CONFIG.adminEmail
     };
     
     // 2. Send notification to admin via FormSubmit
