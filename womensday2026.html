@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WWC Women's Day 2026 - Certificate Program</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #ec4899;
+      --primary-dark: #be185d;
+      --secondary: #8b5cf6;
+      --accent: #f59e0b;
+      --dark: #831843;
+      --light: #fce7f3;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+      margin-bottom: 30px;
+    }
+    
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      color: var(--dark);
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .header p {
+      color: #9d174d;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    
+    /* Progress Steps */
+    .progress-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      gap: 20px;
+    }
+    
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      background: white;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      font-weight: 600;
+      color: #64748b;
+      transition: all 0.3s;
+    }
+    
+    .step.active {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+    }
+    
+    .step-number {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    
+    /* Form Container */
+    .form-container {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(236, 72, 153, 0.15);
+      margin-bottom: 30px;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #374151;
+      font-size: 15px;
+    }
+    
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s;
+      background: #fafafa;
+    }
+    
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--primary);
+      outline: none;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.1);
+    }
+    
+    .question-box {
+      background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .question-box h4 {
+      color: var(--dark);
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    
+    .question-box p {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    
+    /* Submit Button */
+    .btn-submit {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      border-radius: 14px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+      margin-top: 20px;
+    }
+    
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(236, 72, 153, 0.4);
+    }
+    
+    /* Certificate Preview Section (Hidden initially) */
+    .certificate-section {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    
+    .certificate-section.show {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* A4 Landscape Certificate */
+    .certificate-container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto 30px;
+      background: white;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .certificate {
+      width: 100%;
+      aspect-ratio: 1.414/1; /* A4 Landscape ratio */
+      background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+      position: relative;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    /* Certificate Border Design */
+    .cert-border {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border: 3px solid #ec4899;
+      border-radius: 4px;
+    }
+    
+    .cert-border::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border: 1px solid #fbcfe8;
+    }
+    
+    /* Certificate Content */
+    .cert-header {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cert-logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ec4899;
+    }
+    
+    .cert-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #831843;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    
+    .cert-subtitle {
+      font-size: 20px;
+      color: #ec4899;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    
+    .cert-body {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 0;
+    }
+    
+    .cert-presented {
+      font-size: 18px;
+      color: #6b7280;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    .cert-recipient {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      color: #1f2937;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #ec4899;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    
+    .cert-description {
+      font-size: 18px;
+      color: #4b5563;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .cert-id {
+      display: inline-block;
+      background: #fce7f3;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #be185d;
+      font-weight: 700;
+      margin-top: 20px;
+      border: 2px dashed #ec4899;
+    }
+    
+    .cert-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+      z-index: 1;
+      margin-top: 30px;
+    }
+    
+    .cert-founder {
+      text-align: left;
+    }
+    
+    .cert-founder-label {
+      font-size: 14px;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+    
+    .cert-founder-name {
+      font-size: 18px;
+      color: #374151;
+      font-weight: 700;
+    }
+    
+    .cert-signature {
+      text-align: center;
+    }
+    
+    .cert-signature img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .cert-signature-line {
+      width: 200px;
+      height: 2px;
+      background: #1f2937;
+      margin: 0 auto 10px;
+    }
+    
+    .cert-date {
+      font-size: 16px;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    
+    /* Download Button */
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 40px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+      margin: 10px;
+    }
+    
+    .btn-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+    }
+    
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 40px;
+      background: white;
+      color: #374151;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      margin: 10px;
+      text-decoration: none;
+    }
+    
+    .btn-back:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    
+    /* Decorative Elements */
+    .decoration {
+      position: absolute;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    
+    .decoration-1 {
+      top: 40px;
+      right: 40px;
+      font-size: 100px;
+      color: #ec4899;
+    }
+    
+    .decoration-2 {
+      bottom: 100px;
+      left: 40px;
+      font-size: 80px;
+      color: #8b5cf6;
+    }
+    
+    /* Success Message */
+    .success-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      font-size: 50px;
+      color: white;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 32px;
+      }
+      
+      .certificate {
+        padding: 30px;
+      }
+      
+      .cert-title {
+        font-size: 32px;
+      }
+      
+      .cert-recipient {
+        font-size: 36px;
+      }
+      
+      .cert-description {
+        font-size: 14px;
+      }
+      
+      .cert-footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+      
+      .cert-founder {
+        text-align: center;
+      }
+    }
+    
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .certificate-container, .certificate-container * {
+        visibility: visible;
+      }
+      .certificate-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>🌸 WWC Women's Day 2026</h1>
+      <p>Celebrate Your Creativity • Earn Your Certificate</p>
+    </div>
+    
+    <!-- Progress Steps -->
+    <div class="progress-bar" id="progressBar">
+      <div class="step active">
+        <span class="step-number">1</span>
+        <span>Fill Details</span>
+      </div>
+      <div class="step" id="step2">
+        <span class="step-number">2</span>
+        <span>Get Certificate</span>
+      </div>
+    </div>
+    
+    <!-- Form Section -->
+    <div class="form-container" id="formSection">
+      <form id="womensDayForm" onsubmit="generateCertificate(event)">
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="instagram">Instagram Handle (Optional)</label>
+          <input type="text" id="instagram" name="instagram" placeholder="@yourusername">
+        </div>
+        
+        <div class="form-group">
+          <label for="country">Country *</label>
+          <input type="text" id="country" name="country" placeholder="Your country" required>
+        </div>
+        
+        <h3 style="margin: 30px 0 20px; color: #831843; font-size: 20px;">Creative Questions 📝</h3>
+        <p style="color: #6b7280; margin-bottom: 25px; font-size: 14px;">Answer these questions to receive your personalized certificate. There are no wrong answers!</p>
+        
+        <div class="question-box">
+          <h4>Q1. What does creativity mean to you? *</h4>
+          <p>Share your thoughts on creativity in your own words.</p>
+          <textarea name="answer1" rows="3" placeholder="Type your answer here..." required></textarea>
+        </div>
+        
+        <div class="question-box">
+          <h4>Q2. Who is your biggest inspiration and why? *</h4>
+          <p>It could be anyone - family, celebrity, historical figure, or even yourself!</p>
+          <textarea name="answer2" rows="3" placeholder="Type your answer here..." required></textarea>
+        </div>
+        
+        <div class="question-box">
+          <h4>Q3. What is one goal you want to achieve this year? *</h4>
+          <p>Personal or professional, big or small - we want to hear it!</p>
+          <textarea name="answer3" rows="3" placeholder="Type your answer here..." required></textarea>
+        </div>
+        
+        <div class="question-box">
+          <h4>Q4. How do you overcome challenges in your creative journey? *</h4>
+          <p>Share your strategy or mindset for dealing with obstacles.</p>
+          <textarea name="answer4" rows="3" placeholder="Type your answer here..." required></textarea>
+        </div>
+        
+        <div class="question-box">
+          <h4>Q5. One message you'd like to give to women creators worldwide? *</h4>
+          <p>Your words might inspire someone!</p>
+          <textarea name="answer5" rows="3" placeholder="Type your answer here..." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">
+          Generate My Certificate 🎉
+        </button>
+      </form>
+    </div>
+    
+    <!-- Certificate Section (Hidden initially) -->
+    <div class="certificate-section" id="certificateSection">
+      <div class="success-icon">✓</div>
+      <h2 style="color: #059669; margin-bottom: 10px; font-size: 32px;">Congratulations!</h2>
+      <p style="color: #6b7280; margin-bottom: 30px; font-size: 18px;">Your certificate has been generated successfully.</p>
+      
+      <div class="certificate-container" id="certificateContainer">
+        <div class="certificate" id="certificate">
+          <div class="cert-border"></div>
+          
+          <div class="decoration decoration-1">🌸</div>
+          <div class="decoration decoration-2">✨</div>
+          
+          <div class="cert-header">
+            <img src="logo.png" alt="WWC Logo" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-title">Certificate of Appreciation</div>
+            <div class="cert-subtitle">Women's Day 2026</div>
+          </div>
+          
+          <div class="cert-body">
+            <div class="cert-presented">This is proudly presented to</div>
+            <div class="cert-recipient" id="certName">Your Name</div>
+            <div class="cert-description">
+              For participating in the <strong>WWC Women's Day 2026</strong> celebration and sharing your creative journey with us.<br>
+              Your voice matters, your story inspires, and your creativity shines bright.<br>
+              Keep creating, keep inspiring!
+            </div>
+            <div class="cert-id" id="certId">WWC-2026-XXXX</div>
+          </div>
+          
+          <div class="cert-footer">
+            <div class="cert-founder">
+              <div class="cert-founder-label">Authorized Signatory</div>
+              <div class="cert-founder-name">Founder, WW Collab</div>
+            </div>
+            
+            <div class="cert-signature">
+              <img src="signature.png" alt="Signature" id="signatureImg" onerror="this.style.display='none'">
+              <div class="cert-signature-line" id="sigLine"></div>
+              <div class="cert-date" id="certDate">March 8, 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 30px;">
+        <button class="btn-download" onclick="downloadCertificate()">
+          <span>📥</span>
+          <span>Download Certificate</span>
+        </button>
+        <a href="index.html" class="btn-back">
+          <span>←</span>
+          <span>Back to Home</span>
+        </a>
+      </div>
+      
+      <p style="margin-top: 30px; color: #9ca3af; font-size: 14px;">
+        Certificate ID is unique and verifiable. Screenshot and share with #WWCWomenDay2026
+      </p>
+    </div>
+  </div>
+    <!-- html2canvas library for downloading certificate -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  
+  <script>
+    function generateCertificate(event) {
+      event.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(event.target);
+      const fullName = formData.get('fullName').trim();
+      
+      // Generate Certificate ID
+      const randomNum = Math.floor(1000 + Math.random() * 9000);
+      const certId = `WWC-2026-${randomNum}`;
+      
+      // Update certificate content
+      document.getElementById('certName').textContent = fullName;
+      document.getElementById('certId').textContent = certId;
+      
+      // Set current date
+      const today = new Date();
+      const dateStr = today.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+      document.getElementById('certDate').textContent = dateStr;
+      
+      // Check if signature image exists, if not hide it and show line only
+      const sigImg = document.getElementById('signatureImg');
+      sigImg.onerror = function() {
+        this.style.display = 'none';
+        document.getElementById('sigLine').style.display = 'block';
+      };
+      
+      // Hide form, show certificate
+      document.getElementById('formSection').style.display = 'none';
+      document.getElementById('certificateSection').classList.add('show');
+      
+      // Update progress bar
+      document.getElementById('step2').classList.add('active');
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Store in sessionStorage (optional - for data persistence)
+      const data = {
+        name: fullName,
+        email: formData.get('email'),
+        certId: certId,
+        date: dateStr,
+        answers: {
+          q1: formData.get('answer1'),
+          q2: formData.get('answer2'),
+          q3: formData.get('answer3'),
+          q4: formData.get('answer4'),
+          q5: formData.get('answer5')
+        }
+      };
+      sessionStorage.setItem('wwc_womensday_2026', JSON.stringify(data));
+      
+      // Optional: Send data to admin via FormSubmit
+      sendToAdmin(data);
+    }
+    
+    function sendToAdmin(data) {
+      // Configure your admin email here
+      const adminEmail = 'team.wwcollab@gmail.com';
+      
+      fetch(`https://formsubmit.co/ajax/${adminEmail}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `WWC Women's Day 2026 - New Certificate Generated: ${data.certId}`,
+          certificateId: data.certId,
+          participantName: data.name,
+          email: data.email,
+          date: data.date,
+          q1_creativity: data.answers.q1,
+          q2_inspiration: data.answers.q2,
+          q3_goal: data.answers.q3,
+          q4_challenges: data.answers.q4,
+          q5_message: data.answers.q5,
+          _template: 'table'
+        })
+      }).catch(err => console.log('Form notification sent'));
+    }
+    
+    function downloadCertificate() {
+      const certificate = document.getElementById('certificate');
+      const certName = document.getElementById('certName').textContent;
+      
+      // Show loading state
+      const btn = event.target.closest('button');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span>⏳</span><span>Generating...</span>';
+      btn.disabled = true;
+      
+      html2canvas(certificate, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: '#ffffff',
+        logging: false
+      }).then(canvas => {
+        // Create download link
+        const link = document.createElement('a');
+        link.download = `WWC-WomensDay-2026-${certName.replace(/\s+/g, '-')}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        
+        // Reset button
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        
+        // Show success message
+        alert('Certificate downloaded successfully! 🎉');
+      }).catch(err => {
+        console.error('Error:', err);
+        alert('Error generating certificate. Please try again.');
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
+    }
+    
+    // Check if coming back with existing data
+    window.onload = function() {
+      const saved = sessionStorage.getItem('wwc_womensday_2026');
+      if (saved) {
+        const data = JSON.parse(saved);
+        // Optionally restore form or show certificate
+        console.log('Previous certificate found:', data.certId);
+      }
+    };
+  </script>
+</body>
+</html>
