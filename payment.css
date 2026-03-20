@@ -1,0 +1,539 @@
+/* =====================================================
+   WORLDWIDE COLLAB - Payment Page Styles
+   payment.css
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #667eea;
+  --secondary: #764ba2;
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --success: #27ae60;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+}
+
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--gradient);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ===== PAYMENT CONTAINER ===== */
+.payment-container {
+  background: white;
+  border-radius: 30px;
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 5px;
+  background: var(--gradient);
+}
+
+/* ===== HEADER ===== */
+.payment-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.payment-header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  border: 4px solid rgba(102, 126, 234, 0.2);
+  display: block;
+}
+
+.payment-header h1 {
+  color: var(--primary);
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.payment-header p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* ===== ORDER SUMMARY ===== */
+.order-summary {
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+.order-id-badge {
+  background: var(--gradient);
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.detail-row:last-child { border-bottom: none; }
+
+.detail-label {
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+}
+
+.detail-value {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: right;
+  max-width: 60%;
+  word-break: break-all;
+}
+
+/* ===== AMOUNT HIGHLIGHT ===== */
+.amount-highlight {
+  background: var(--gradient);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.amount-highlight h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.amount-display {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* ===== TIMER ===== */
+.timer-box {
+  background: #fff8e7;
+  border: 2px solid #ffc107;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.timer-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #856404;
+  margin-bottom: 8px;
+}
+
+.timer-countdown {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--danger);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 3px;
+}
+
+.timer-box.urgent {
+  background: #fff0f0;
+  border-color: var(--danger);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
+/* ===== UPI / QR SECTION ===== */
+.payment-methods { margin: 25px 0; }
+
+.payment-methods h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.upi-box {
+  background: #f8f9ff;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  border: 2px dashed rgba(102, 126, 234, 0.3);
+}
+
+.upi-label {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.upi-id-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.upi-id-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.copy-btn {
+  background: var(--gradient);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.copy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.copy-btn.copied {
+  background: linear-gradient(135deg, #27ae60, #16a085);
+}
+
+/* ===== DYNAMIC QR CODE ===== */
+.qr-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.qr-frame {
+  background: white;
+  border: 3px solid rgba(102, 126, 234, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+  display: inline-block;
+}
+
+.qr-frame::before,
+.qr-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--primary);
+  border-style: solid;
+}
+
+.qr-frame::before {
+  top: 8px; left: 8px;
+  border-width: 3px 0 0 3px;
+  border-radius: 4px 0 0 0;
+}
+
+.qr-frame::after {
+  bottom: 8px; right: 8px;
+  border-width: 0 3px 3px 0;
+  border-radius: 0 0 4px 0;
+}
+
+#dynamicQRCanvas {
+  display: block;
+  border-radius: 10px;
+  max-width: 220px;
+  max-height: 220px;
+}
+
+.qr-loading {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  color: #667eea;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.qr-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(102, 126, 234, 0.2);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.qr-badges {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.qr-app-badge {
+  background: white;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.qr-note {
+  font-size: 12px;
+  color: #888;
+  margin-top: 8px;
+}
+
+.qr-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.btn-download-qr,
+.btn-open-upi {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-download-qr {
+  background: #f1f5ff;
+  color: var(--primary);
+  border: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.btn-download-qr:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-open-upi {
+  background: var(--gradient);
+  color: white;
+}
+
+.btn-open-upi:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* ===== PAYMENT FORM ===== */
+.payment-form { margin-top: 25px; }
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input[type="file"] {
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.btn-confirm {
+  width: 100%;
+  padding: 18px;
+  background: var(--gradient);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-confirm:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.btn-confirm:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== NOTE BOX ===== */
+.note-box {
+  background: #fff8e7;
+  border-left: 4px solid var(--warning);
+  border-radius: 0 12px 12px 0;
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 13px;
+  color: #6b5900;
+  line-height: 1.6;
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+.success-screen {
+  display: none;
+  text-align: center;
+  padding: 30px;
+}
+
+.success-screen.show { display: block; }
+
+.success-icon-big {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: bounceIn 0.6s ease;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.success-screen h2 {
+  color: var(--success);
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.success-order-id {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid rgba(39, 174, 96, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  font-weight: 700;
+  color: var(--success);
+  font-size: 18px;
+  margin: 15px 0;
+  letter-spacing: 1px;
+}
+
+.back-home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gradient);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin-top: 20px;
+}
+
+.back-home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .payment-container { padding: 25px 20px; }
+  .amount-display { font-size: 38px; }
+  .upi-id-text { font-size: 18px; }
+  .btn-confirm { font-size: 16px; padding: 16px; }
+}
