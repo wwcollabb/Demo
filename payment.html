@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Payment - Worldwide Collab</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/payment.css">
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <!-- QRCode.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<div class="payment-container" id="paymentForm">
+
+  <!-- Header -->
+  <div class="payment-header">
+    <img src="logo.png" alt="Worldwide Collab" onerror="this.style.display='none'">
+    <h1>Complete Payment</h1>
+    <p>Secure & Instant UPI Payment</p>
+  </div>
+
+  <!-- Order Summary -->
+  <div class="order-summary">
+    <div class="order-id-badge" id="displayOrderId">Order ID: Loading...</div>
+    <div class="detail-row">
+      <span class="detail-label">📱 Platform:</span>
+      <span class="detail-value" id="displayPlatform">-</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">⚙️ Service:</span>
+      <span class="detail-value" id="displayService">-</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">🔢 Quantity:</span>
+      <span class="detail-value" id="displayQuantity">-</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">🔗 Link:</span>
+      <span class="detail-value" id="displayLink">-</span>
+    </div>
+  </div>
+
+  <!-- Amount -->
+  <div class="amount-highlight">
+    <h3>Total Amount to Pay</h3>
+    <div class="amount-display" id="displayAmount">₹0</div>
+  </div>
+
+  <!-- Timer -->
+  <div class="timer-box" id="timerBox">
+    <div class="timer-label">⏱️ Payment expires in:</div>
+    <div class="timer-countdown" id="countdown">05:00</div>
+  </div>
+
+  <!-- Payment Method -->
+  <div class="payment-methods">
+    <h3>💳 Pay via UPI</h3>
+
+    <div class="upi-box">
+      <div class="upi-label">Send payment to UPI ID:</div>
+
+      <div class="upi-id-row">
+        <div class="upi-id-text" id="upiIdText">nextune@upi</div>
+        <button class="copy-btn" id="copyUPIBtn" onclick="copyUPI()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy
+        </button>
+      </div>
+
+      <!-- Dynamic QR Code Section -->
+      <div class="qr-wrapper">
+        <div class="qr-frame">
+          <!-- Loading State -->
+          <div class="qr-loading" id="qrLoadingState">
+            <div class="qr-spinner"></div>
+            <span>Generating QR...</span>
+          </div>
+          <!-- Canvas for QR Code -->
+          <canvas id="dynamicQRCanvas" style="display:none;"></canvas>
+        </div>
+
+        <!-- App Compatibility Badges -->
+        <div class="qr-badges">
+          <span class="qr-app-badge">✅ Google Pay</span>
+          <span class="qr-app-badge">✅ PhonePe</span>
+          <span class="qr-app-badge">✅ Paytm</span>
+          <span class="qr-app-badge">✅ BHIM</span>
+          <span class="qr-app-badge">✅ Amazon Pay</span>
+          <span class="qr-app-badge">✅ Any UPI App</span>
+        </div>
+
+        <div class="qr-note">📸 Scan this QR code with any UPI app to pay instantly</div>
+
+        <!-- Action Buttons -->
+        <div class="qr-actions">
+          <button class="btn-download-qr" onclick="downloadQR()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download QR
+          </button>
+          <button class="btn-open-upi" onclick="openUPIApp()">
+            📱 Open UPI App
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Important Note -->
+  <div class="note-box">
+    <strong>⚠️ Important:</strong> After making payment, enter your UPI Transaction ID below. This helps us verify your payment and process your order faster.
+  </div>
+
+  <!-- Payment Confirmation Form -->
+  <form class="payment-form" id="confirmPaymentForm" onsubmit="confirmPayment(event)">
+    <div class="form-group">
+      <label for="customerEmail">📧 Your Email (for confirmation):</label>
+      <input type="email" id="customerEmail" placeholder="your@email.com" required>
+    </div>
+
+    <div class="form-group">
+      <label for="transactionId">🧾 UPI Transaction ID / Reference Number:</label>
+      <input type="text" id="transactionId" placeholder="e.g., 123456789012" required>
+    </div>
+
+    <div class="form-group">
+      <label for="paymentScreenshot">📸 Transaction Screenshot (Optional):</label>
+      <input type="file" id="paymentScreenshot" accept="image/*">
+    </div>
+
+    <button type="submit" class="btn-confirm" id="submitBtn">
+      ✅ Confirm Payment & Submit Order
+    </button>
+  </form>
+</div>
+
+<!-- Success Screen -->
+<div class="payment-container success-screen" id="successMessage">
+  <div class="success-icon-big">🎉</div>
+  <h2>Payment Confirmed!</h2>
+  <p style="color:#555;margin-bottom:15px;">Your order has been submitted successfully.</p>
+  <div class="success-order-id" id="successOrderId"></div>
+  <p style="color:#666;font-size:14px;margin-top:10px;">📦 Your order will be delivered within 24 hours</p>
+  <a href="index.html" class="back-home-btn">🏠 Back to Home</a>
+</div>
+
+<!-- Scripts -->
+<!-- Config must come first -->
+<script>
+  const WWC_CONFIG = {
+    adminEmail: 'team.wwcollab@gmail.com',
+    emailjsUserId: '5Gvu19EQdBGPu9fXt',
+    emailjsServiceId: 'service_xctfgme',
+    emailjsTemplateId: 'template_9lzbn59',
+    upiId: 'nextune@upi',
+    upiName: 'Worldwide Collab',
+    siteName: 'Worldwide Collab'
+  };
+</script>
+
+<!-- EmailJS Init -->
+<script>
+  (function() {
+    if (typeof emailjs !== 'undefined') {
+      emailjs.init(WWC_CONFIG.emailjsUserId);
+    }
+  })();
+</script>
+
+<!-- QR System + Payment Logic -->
+<script src="js/qr-system.js"></script>
+<script src="js/payment.js"></script>
+
+<!-- Inline clipboard helper (for copyToClipboard) -->
+<script>
+  async function copyToClipboard(text, btnEl, successText = 'Copied!') {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0;';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    if (btnEl) {
+      const orig = btnEl.innerHTML;
+      btnEl.innerHTML = '✅ ' + successText;
+      btnEl.classList.add('copied');
+      setTimeout(() => { btnEl.innerHTML = orig; btnEl.classList.remove('copied'); }, 2000);
+    }
+  }
+</script>
+
+</body>
+</html>
